@@ -25,11 +25,11 @@ function fifo(incoming_pages, no_frames){
 		else
 			document.querySelector(`th[itr="${i}"]`).classList = ['bg-success'];
 
-		print_frame(frames, i)
+		print_frame(frames, i, (hit == 0 ? 'red-muted' : 'green-muted'))
 	}
 	let out = document.querySelector("#output");
 	out.innerHTML = `Number of faults: ${page_faults}` + `<br>Number of hits: ${page_hits}<br>`
-	out.innerHTML += `Hit Ratio: ${page_hits/incoming_pages.length}`
+	out.innerHTML += `Hit Ratio: ${(page_hits/incoming_pages.length).toFixed(3)}`
 
 	console.log(`No of faults: ${page_faults}`);
     console.log(`No of hits: ${page_hits}`);

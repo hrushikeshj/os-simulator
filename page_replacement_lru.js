@@ -64,13 +64,13 @@ function lru(pages, no_frames){
         
             // Update the current page index
         }
-        print_frame(frames_arr, i, (hit == 0 ? 'red-muted' : ''));
+        print_frame(frames_arr, i, (hit == 0 ? 'red-muted' : 'green-muted'));
     }
     
     let page_hits = (pages.length - page_faults)
     let out = document.querySelector("#output");
 	out.innerHTML = `Number of faults: ${page_faults}` + `<br>Number of hits: ${page_hits}<br>`
-	out.innerHTML += `Hit Ratio: ${page_hits/pages.length}`
+	out.innerHTML += `Hit Ratio: ${(page_hits/pages.length).toFixed(3)}`
     console.log(page_faults);
     return page_faults;
 }

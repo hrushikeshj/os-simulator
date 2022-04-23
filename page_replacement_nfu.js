@@ -6,10 +6,11 @@ function replace(frames, old_ele, new_ele){
 }
 
 function nfu(incoming_pages, no_frames){
-    let frequency = new Map(), i, incoming_page, f, page_faults = 0;
+    let frequency = new Map(), i, incoming_page, f, page_faults = 0, hit;
     let frames = new Set(), frames_arr = new Array(no_frames).fill(-1), arr_c = 0;
 
     for(i=0; i<incoming_pages.length; i++){
+        hit = 0;
         incoming_page = incoming_pages[i];
 
         // update frequency
@@ -45,16 +46,18 @@ function nfu(incoming_pages, no_frames){
             }
             document.querySelector(`th[itr="${i}"]`).classList = ['bg-danger'];
         }
-        else
+        else{
             document.querySelector(`th[itr="${i}"]`).classList = ['bg-success'];
+            hit = 1;
+        }
 
-        print_frame(frames_arr, i);
+        print_frame(frames_arr, i, (hit == 0 ? 'red-muted' : 'green-muted'));
         
     }
 
     let page_hits = (incoming_pages.length - page_faults)
     let out = document.querySelector("#output");
 	out.innerHTML = `Number of faults: ${page_faults}` + `<br>Number of hits: ${page_hits}<br>`
-	out.innerHTML += `Hit Ratio: ${page_hits/incoming_pages.length}`
+	out.innerHTML += `Hit Ratio: ${(page_hits/incoming_pages.length).toFixed(3)}`
     console.log(page_faults);
 }
