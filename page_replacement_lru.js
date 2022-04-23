@@ -53,7 +53,7 @@ function lru(pages, no_frames){
                 // remove page
                 framesSet.delete(val);
                 //remove lru from hashmap
-                lastUsed.delete(val);
+                //lastUsed.delete(val);
 
                 // add page 
                 framesSet.add(pages[i]);

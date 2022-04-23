@@ -90,6 +90,7 @@
     <script src="page_replacement_fifo.js"></script>
     <script src="page_replacement_lru.js"></script>
     <script src="page_replacement_optimal.js"></script>
+    <script src="page_replacement_nfu.js"></script>
     <script>
         // returns a int value
         function getValue(id){
@@ -153,7 +154,8 @@
             initTable(no_frames, no_requests, ref_string)
             //lru(ref_string, no_frames)
             //fifo(ref_string, no_frames);
-            optimal(ref_string, no_frames);
+            //optimal(ref_string, no_frames);
+            nfu(ref_string, no_frames);
 
         }
 
