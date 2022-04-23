@@ -226,6 +226,12 @@
                     document.querySelector(`#in-${id_no+1}`).focus();
             }
         })*/
+        var url = new URL(window.location.href);
+        var c = url.searchParams.get("algo");
+        if(c){
+            document.querySelector("#card-div").classList.remove('hide');
+            document.querySelector("#algo").value = c;
+        }
     </script>
 </body>
 </html>
