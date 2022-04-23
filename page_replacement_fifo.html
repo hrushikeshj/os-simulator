@@ -28,7 +28,9 @@
             margin-left: 4px;
             margin-top: 4px;
         }
-        
+        .red-muted{
+            background-color: rgb(220 53 69 / 17%) !important;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +72,20 @@
             <div id="output"></div>
         </div>
     </div>
+
+    <script>
+        function print_frame(frames, irt, class_name=''){
+            for(let i=0; i<frames.length; i++){
+                let td = document.querySelector(`tr[frame="${i}"] td[itr="${irt}"]`);
+                td.classList = [class_name];
+                if(frames[i] == -1)
+                    td.innerHTML = "n/a";
+                else
+                    td.innerHTML = frames[i];
+            }
+            
+        }
+    </script>
 
     <script src="page_replacement_fifo.js"></script>
     <script src="page_replacement_lru.js"></script>
@@ -134,7 +150,7 @@
             console.log(ref_string)
 
             initTable(no_frames, no_requests, ref_string)
-            lru(ref_string, no_frames)
+            //lru(ref_string, no_frames)
             //fifo(ref_string, no_frames);
 
         }

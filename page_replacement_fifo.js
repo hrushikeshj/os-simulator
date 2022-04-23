@@ -1,13 +1,3 @@
-function print_frame(frames, irt){
-    for(let i=0; i<frames.length; i++){
-		let td = document.querySelector(`tr[frame="${i}"] td[itr="${irt}"]`);
-        if(frames[i] == -1)
-			td.innerHTML = "n/a";
-        else
-		td.innerHTML = frames[i];
-    }
-}
-
 function fifo(incoming_pages, no_frames){
 	let hit = 0, pos = 0;
 	let page_faults = 0;
