@@ -31,13 +31,16 @@
         .red-muted{
             background-color: rgb(220 53 69 / 17%) !important;
         }
+        .hide{
+            /*display: none;*/
+        }
     </style>
 </head>
 <body>
     <h1 class="display-6 text-center">Page Replacement</h1>
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-sm-4 mt-2">
                 <div class="card p-2">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Number of Frames</label>
@@ -50,16 +53,24 @@
                     <button type="submit" class="btn btn-primary" id="add-input" style="width: 80px;">Add</button>
                 </div>
             </div>
-            <div class="col-8">
-                <div class="card p-2">
+            <div class="col-12 col-sm-8 mt-2">
+                <div class="card p-2 hide" id="card-div">
                     <label for="exampleInputEmail1" class="form-label">Enter the refrence string</label>
                     <div class="input-flex" id="input-div">
                     </div>
+                    <label for="exampleInputPassword1" class="form-label mt-4">Algorithm</label>
+                    <select style="width: 200px;" id="algo" class="form-select" aria-label="Default select example">
+                        <option selected value="1">First-in, first-out</option>
+                        <option value="2">Least recently used</option>
+                        <option value="3">Optimal</option>
+                        <option value="4">Not frequently used </option>
+                    </select>
                     <button type="submit" class="btn btn-primary mt-4" id="run" style="width: 80px;">Run</button>
                 </div>
             </div>
         </div>
 
+        <div class="display-6 text-center mt-2" id="algo-head"></div>
         <div class="mt-4">
             <table class="table" id="output-table">
                 <thead>
@@ -101,6 +112,7 @@
                                             data-id-no="${id_no}" style="width: 50px;" id="in-${id_no}">`
 
         function addInputbox(){
+            document.querySelector("#card-div").classList.remove('hide');
             let no_frames = getValue("#no-frames");
             let no_requests = getValue("#no-requests");
             let input_flex = document.querySelector("#input-div")
@@ -143,6 +155,8 @@
         function simulate(){
             let no_frames = getValue("#no-frames");
             let no_requests = getValue("#no-requests");
+            let algo = document.querySelector("#algo").value;
+            let algo_head = document.querySelector("#algo-head");
 
             let ref_string = new Array(no_requests);
             
@@ -152,10 +166,26 @@
             console.log(ref_string)
 
             initTable(no_frames, no_requests, ref_string)
-            //lru(ref_string, no_frames)
-            //fifo(ref_string, no_frames);
-            //optimal(ref_string, no_frames);
-            nfu(ref_string, no_frames);
+            switch(algo){
+                case '1':
+                    algo_head.innerHTML = 'First-in, first-out';
+                    fifo(ref_string, no_frames);
+                    break;
+                case '2':
+                    algo_head.innerHTML = 'Least recently used';
+                    lru(ref_string, no_frames)
+                    break;
+                case '3':
+                    algo_head.innerHTML = 'Optimal';
+                    optimal(ref_string, no_frames);
+                    break;
+                case '4':
+                    algo_head.innerHTML = 'Not frequently used ';
+                    nfu(ref_string, no_frames);
+                    break;
+                default:
+                    alert("invalid choice!!");
+            }
 
         }
 
