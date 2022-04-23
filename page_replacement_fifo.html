@@ -31,8 +31,27 @@
         .red-muted{
             background-color: rgb(220 53 69 / 17%) !important;
         }
+        .green-muted{
+            background-color: rgb(25 135 84 / 17%) !important;
+        }
         .hide{
-            /*display: none;*/
+            display: none;
+        }
+        table.table-fit {
+            width: auto !important;
+            table-layout: auto !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .table-fit td, .table-fit th{
+            width: auto !important;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        #output{
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -72,7 +91,7 @@
 
         <div class="display-6 text-center mt-2" id="algo-head"></div>
         <div class="mt-4">
-            <table class="table" id="output-table">
+            <table class="table table-fit" id="output-table">
                 <thead>
                   <tr>
                   </tr>
@@ -80,9 +99,10 @@
                 <tbody>
                 </tbody>
             </table>
-            <div id="output"></div>
+            <div id="output" class="lead"></div>
         </div>
     </div>
+    <br><br>
 
     <script>
         function print_frame(frames, irt, class_name=''){
