@@ -37,6 +37,10 @@ function fifo(incoming_pages, no_frames){
 
 		print_frame(frames, i)
 	}
+	let out = document.querySelector("#output");
+	out.innerHTML = `Number of faults: ${page_faults}` + `<br>Number of hits: ${page_hits}<br>`
+	out.innerHTML += `Hit Ratio: ${page_hits/incoming_pages.length}`
+
 	console.log(`No of faults: ${page_faults}`);
     console.log(`No of hits: ${page_hits}`);
 }
