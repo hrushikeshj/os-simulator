@@ -72,6 +72,7 @@
     </div>
 
     <script src="page_replacement_fifo.js"></script>
+    <script src="page_replacement_lru.js"></script>
     <script>
         // returns a int value
         function getValue(id){
@@ -133,7 +134,8 @@
             console.log(ref_string)
 
             initTable(no_frames, no_requests, ref_string)
-            fifo(ref_string, no_frames, no_requests);
+            lru(ref_string, no_frames)
+            //fifo(ref_string, no_frames);
 
         }
 
