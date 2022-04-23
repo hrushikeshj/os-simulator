@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>FIFO</title>
+    <style>
+        .input-flex input::-webkit-outer-spin-button,
+        .input-flex input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        .input-flex input[type=number] {
+        -moz-appearance: textfield;
+        }
+
+        .input-flex{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .input-flex input{
+            margin-left: 4px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="display-6 text-center">Page Replacement</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card p-2">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Number of Frames</label>
+                        <input type="number" class="form-control" id="no-frames" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Number of requests</label>
+                        <input type="number" class="form-control" id="no-requests">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="add-input" style="width: 80px;">Add</button>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="card p-2">
+                    <label for="exampleInputEmail1" class="form-label">Enter the refrence string</label>
+                    <div class="input-flex" id="input-div">
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4" id="run" style="width: 80px;">Run</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // returns a int value
+        function getValue(id){
+            return +(document.querySelector(id).value)
+        }
+
+        let input_template = id_no => `<input type="number" class="form-control" data-ref-string="yes" 
+                                            data-id-no="${id_no}" style="width: 50px;" id="in-${id_no}">`
+
+        function addInputbox(){
+            let no_frames = getValue("#no-frames");
+            let no_requests = getValue("#no-requests");
+            let input_flex = document.querySelector("#input-div")
+            let temp = '';
+
+            for(let i=0; i<no_requests; i++)
+                temp += input_template(i);
+
+            input_flex.innerHTML = temp;
+            
+        }
+
+        function simulate(){
+            let no_frames = getValue("#no-frames");
+            let no_requests = getValue("#no-requests");
+
+            let ref_string = new Array(no_requests);
+            
+            for(let i=0; i<no_requests; i++)
+                ref_string[i] = getValue(`#in-${i}`);
+            
+            console.log(ref_string)
+
+        }
+
+
+        let add_btn = document.querySelector("#add-input");
+        let run_btn = document.querySelector("#run");
+        
+        add_btn.addEventListener('click', addInputbox)
+        run_btn.addEventListener('click', simulate);
+
+        /*document.addEventListener('input', (e)=>{
+            if(e.srcElement.dataset.refString == 'yes'){
+                console.log(e.srcElement)
+
+                let no_requests = getValue("#no-requests");
+                let id_no = +(e.srcElement.dataset.idNo);
+                if((e.srcElement.value.length >= `${no_requests}`.length) && id_no<no_requests)
+                    document.querySelector(`#in-${id_no+1}`).focus();
+            }
+        })*/
+    </script>
+</body>
+</html>
