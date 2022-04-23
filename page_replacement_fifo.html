@@ -28,6 +28,7 @@
             margin-left: 4px;
             margin-top: 4px;
         }
+        
     </style>
 </head>
 <body>
@@ -56,8 +57,21 @@
                 </div>
             </div>
         </div>
+
+        <div class="mt-4">
+            <table class="table" id="output-table">
+                <thead>
+                  <tr>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="output"></div>
+        </div>
     </div>
 
+    <script src="page_replacement_fifo.js"></script>
     <script>
         // returns a int value
         function getValue(id){
@@ -80,6 +94,33 @@
             
         }
 
+        function initTable(no_frames, no_requests, ref_string){
+            let table_head_row_html = '<th scope="col">Refrence string</th>', table_body_html = '', i;
+            let table_head_row = document.querySelector("#output-table thead tr");
+            let table_body = document.querySelector("#output-table tbody");
+
+            let table_head_row_template = (data, irt) => `<th scope="col" itr="${irt}">${data}</th>`;
+            let table_body_row_template = frame_no => {
+                let temp = '', j=0
+                for(j=0; j<no_requests; j++)
+                    temp += `<td itr="${j}">${frame_no} x</td>`
+                
+                return `<tr frame="${frame_no}">
+                        <th>Frame-${frame_no}</th>
+                        ${temp}
+                    </tr>`;
+            }
+
+            for(i=0; i<no_requests; i++)
+                table_head_row_html += table_head_row_template(ref_string[i], i)
+            
+            for(i=0; i<no_frames; i++)
+                table_body_html += table_body_row_template(i)
+
+            table_head_row.innerHTML = table_head_row_html;
+            table_body.innerHTML =  table_body_html;
+        }
+
         function simulate(){
             let no_frames = getValue("#no-frames");
             let no_requests = getValue("#no-requests");
@@ -90,6 +131,9 @@
                 ref_string[i] = getValue(`#in-${i}`);
             
             console.log(ref_string)
+
+            initTable(no_frames, no_requests, ref_string)
+            fifo(ref_string, no_frames, no_requests);
 
         }
 
