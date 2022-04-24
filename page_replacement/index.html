@@ -10,24 +10,105 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <title>Page Replacement</title>
     <style>
-
+        .display-7{
+            font-size: 2rem;
+        }
     </style>
 </head>
 <body>
-<h1 class="display-6 text-center">Page Replacement algorithm</h1><br>
+<h1 class="display-6 fw-bold text-center">Page Replacement algorithm</h1><br>
 <div class="container">
-    <p class="lead">
-        In a operating systems that use paging for memory management, page replacement algorithm 
-        are needed to decide which page needed to be replaced when new page comes in. Whenever 
-        a new page is referred and not present in memory, page fault occurs and Operating System 
-        replaces one of the existing pages with newly needed page. Different page replacement 
-        algorithms suggest different ways to decide which page to replace. The target for all 
-        algorithms is to reduce number of page faults.
-        Page Fault - A page fault is a type of interrupt, raised by the hardware when a running 
-        program accesses a memory page that is mapped into the virtual address space, but not 
-        loaded in physical memory.
-    </p>
+    <div class="row">
+        <p class="col-12 col-sm-8 fs-5">
+            In a operating systems that use paging for memory management, page replacement algorithm 
+            are needed to decide which page needed to be replaced when new page comes in. Whenever 
+            a new page is referred and not present in memory, page fault occurs and Operating System 
+            replaces one of the existing pages with newly needed page. Different page replacement 
+            algorithms suggest different ways to decide which page to replace. The target for all 
+            algorithms is to reduce number of page faults.<br>
+            Page Fault - A page fault is a type of interrupt, raised by the hardware when a running 
+            program accesses a memory page that is mapped into the virtual address space, but not 
+            loaded in physical memory.
+        </p>
+        <img src="images/page_replacement.jpg" alt="page_replacement.jpg" class="col-12 col-sm-4">
+    </div>
+    
     <hr>
+
+    
+    <div class="h-100 p-3 bg-light border rounded-3">
+        <h1 class="display-6 display-7 fw-bold">First-in, first-out</h1>
+        <div class="row">
+            <p class="col-12 col-sm-8 fs-5">
+                The simplest page-replacement algorithm is a FIFO algorithm. The first-in, first-out 
+                (FIFO) page replacement algorithm is a low-overhead algorithm that requires little 
+                bookkeeping on the part of the operating system. The idea is obvious from the name -
+                the operating system keeps track of all the pages in memory in a queue, with the 
+                most recent arrival at the back, and the oldest arrival in front. When a page needs
+                to be replaced, the page at the front of the queue (the oldest page) is selected.
+                While FIFO is cheap and intuitive, it performs poorly in practical application. 
+                Thus, it is rarely used in its unmodified form. This algorithm experiences Bélády's
+                anomaly. In simple words, on a page fault, the frame that has been in memory the 
+                longest is replaced.
+            </p>
+            <img src="images/fifo.png" alt="First-in, first-out image" style="object-fit: contain;" class="col-12 col-sm-4">
+        </div>
+        <a class="btn btn-outline-secondary" href="simulation.html?algo=1">FiFo Simulation</a>
+    </div>
+
+    <div class="h-100 p-3 bg-light border rounded-3 mt-4">
+        <h1 class="display-6 display-7 fw-bold">Least recently used</h1>
+        <div class="row">
+            <p class="col-12 col-sm-12 fs-5">
+                The least recently used (LRU) page replacement algorithm keeps track of page usage
+                 over a short period of time. LRU works on the idea that pages that have been 
+                 most heavily used in the past few instructions are most likely to be used 
+                 heavily in the next few instructions too. While LRU can provide near-optimal 
+                 performance in theory (almost as good as adaptive replacement cache), 
+                 it is rather expensive to implement in practice. 
+                 There are a few implementation methods for this algorithm that try to 
+                 reduce the cost yet keep as much of the performance as possible.
+            </p>
+        </div>
+        <a class="btn btn-outline-secondary" href="simulation.html?algo=2">LRU Simulation</a>
+    </div>
+
+    <div class="h-100 p-3 bg-light border rounded-3 mt-3">
+        <h1 class="display-6 display-7 fw-bold">Optimal</h1>
+        <div class="row">
+            <p class="col-12 col-sm-8 fs-5">
+                In this algorithm, pages are replaced which are not used for the longest duration of time in the future.
+                This algorithm cannot be implemented in a general purpose operating system because 
+                it is impossible to compute reliably how long it will be before a page is going to 
+                be used, except when all software that will run on a system is either known 
+                beforehand and is amenable to static analysis of its memory reference patterns, 
+                or only a class of applications allowing run-time analysis.
+            </p>
+            <img src="images/optimal.png" alt="First-in, first-out image" style="object-fit: contain;" class="col-12 col-sm-4">
+        </div>
+        <a class="btn btn-outline-secondary" href="simulation.html?algo=3">Optimal Simulation</a>
+    </div>
+
+    <div class="h-100 p-3 bg-light border rounded-3 mt-3">
+        <h1 class="display-6 display-7 fw-bold">Not frequently used</h1>
+        <div class="row">
+            <p class="col-12 col-sm-12 fs-5">
+                The not frequently used (NFU) page replacement algorithm requires a counter, 
+                and every page has one counter of its own which is initially set to 0. 
+                At each clock interval, all pages that have been referenced within that 
+                interval will have their counter incremented by 1. In effect, the counters 
+                keep track of how frequently a page has been used. Thus, the page with the 
+                lowest counter can be swapped out when necessary.<br>
+                The main problem with NFU is that it keeps track of the frequency of use without 
+                regard to the time span of use. Thus, in a multi-pass compiler, pages which were 
+                heavily used during the first pass, but are not needed in the second pass will be 
+                favoured over pages which are comparably lightly used in the second pass, as they 
+                have higher frequency counters.
+            </p>
+        </div>
+        <a class="btn btn-outline-secondary" href="simulation.html?algo=4">NFU Simulation</a>
+    </div>
+
 </div>
 </body>
 </html>
