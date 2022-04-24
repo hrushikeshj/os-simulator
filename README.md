@@ -5,14 +5,14 @@ git clone https://<your_username>@github.com/hrushikeshj/os-simulator
 ```
 > cd into the folder os-simulator
 
-###### create a new branch
+##### create a new branch
 ```git
 git checkout -b your-branch-name-here
 ```
 Add your files
 
 ## Suggested file structure
-Create a new folder and add your file in it.
+Create a new folder and add your file to it.
 ```
 os-simulator
 │   index.html
@@ -53,7 +53,7 @@ After adding your files, add your topic to `os-simulator/index.html` sidebar.
 
 ```
 
-After makeing all the changes, commit your changes, push the branch and create a merge request on github
+After making all the changes, commit your changes, push the branch and create a merge request on Github
 
 ###### Commit changes
 ```git
