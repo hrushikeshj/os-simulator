@@ -7,12 +7,15 @@ body{
     border-color: black;
     padding: 7px;
     border-radius: 15px;
-    background-color: orange;
+    background-color: #d0dce3;
+  }
+  button:hover {
+    background-color: rgb(103, 150, 197);
   }
   
   td, th{
     padding: 5px;
-    background-color: skyblue;
+    background-color: #77d6bec4;
   }
   
   input{
@@ -55,11 +58,14 @@ body{
   
   .seq{
     padding-top:3%;
+    font-size: large;
   }
   
   .comparison{
     padding-top: 10%;
     padding-left: 7%;
+    font-size: large;
+    
   }
   
   .cname{

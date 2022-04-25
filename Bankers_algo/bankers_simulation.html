@@ -5,6 +5,15 @@
     <title>Banker's Algorithm Simulator</title>
     <link rel="stylesheet" href="bankers_style.css"/>
     <script src="bankers_script.js"></script>
+    <style>
+      body {
+        background-image: url('../Bankers_algo/images/background.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+      </style>
+      
   </head>
   <body>
     <nav class="nav">
@@ -25,13 +34,13 @@
 });
     </script>
     <div class="wrapper">
-      <center><h2>Banker's Algorithm Simulator</h2><a class="cname" title="Creator" href="http://fsociety.co.in">lucifer</a></center>
+      <center><h1>Banker's Algorithm Simulator</h1></center>
     </div>
     <div class="input">
       <center>
-        No. of instances of A: &nbsp<input type="text" id="resourceA" size="2" maxlength="2"/>&nbsp&nbsp&nbsp
-        No. of instances of B: &nbsp<input type="text" id="resourceB" size="2" maxlength="2"/>&nbsp&nbsp&nbsp
-        No. of instances of C: &nbsp<input type="text" id="resourceC" size="2" maxlength="2"/>&nbsp&nbsp&nbsp
+        No. of Instances of A: &nbsp<input type="text" id="resourceA" size="2" maxlength="2"/>&nbsp&nbsp&nbsp
+        No. of Instances of B: &nbsp<input type="text" id="resourceB" size="2" maxlength="2"/>&nbsp&nbsp&nbsp
+        No. of Instances of C: &nbsp<input type="text" id="resourceC" size="2" maxlength="2"/>&nbsp&nbsp&nbsp
         <button type="input" name="sam" onclick="sample()">Sample Example</button>&nbsp&nbsp&nbsp
         <button type="input" name="avai" onclick="find_avai()">Find available</button>&nbsp&nbsp&nbsp
         <button type="input" name="need" onclick="find_need()">Find need</button>&nbsp&nbsp&nbsp
@@ -201,7 +210,7 @@
     </div>
     <div class="comparison">
       <cener>
-        <span>Operations:</span>
+        <span style="font-size: 25px;font-family: system-ui;">Operations:</span>
         <span id="calc0"></span>
         <span id="calc1"></span><br/>
         <span id="calc2"></span><br/>

@@ -6,15 +6,22 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Home</title>
+    <title>Bankers Algorithm</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Home.css" media="screen">
+    <link rel="stylesheet" href="Home.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.9.5, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-    
+    <style>
+      body {
+        background-image: url('../Bankers_algo/images/bg3.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+      </style>
     
     
     <script type="application/ld+json">{
@@ -55,7 +62,7 @@
           </div>
         </nav>
       </div></header>
-    <section class="u-align-left u-clearfix u-section-1" id="carousel_1022">
+    <section class="u-align-left u-clearfix u-section-1" id="carousel_1022" >
       <div class="u-clearfix u-sheet u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-sheet-1">
         <blockquote class="u-border-20 u-border-palette-4-base u-custom-font u-font-montserrat u-text u-text-default u-text-1">Bankers Algorithm<br>
         </blockquote>
@@ -231,7 +238,7 @@
           <h2>C Program to simulate Bankers Algorithm </h2>
           <br>
           <pre><code class="language-java graf graf--code">
-            #include<stdio.h>
+            #include< stdio.h>
               int main() {
                 int k=0,d=0,t=0,i,j,pno,rz, count=0;
                 printf("\n Enter the number of resources : ");
@@ -333,7 +340,7 @@ advance.
     </section>
     <section class="u-clearfix u-section-3" id="sec-46aa">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-text u-text-default u-text-1" style="font-size:1.25rem">Need [i] = Max [i] - Allocation [i]<br>Need for P1: (7, 5, 3) - (0, 1, 0) = 7, 4, 3<br>Need for P2: (3, 2, 2) - (2, 0, 0) = 1, 2, 2<br>Need for P3: (9, 0, 2) - (3, 0, 2) = 6, 0, 0<br>Need for P4: (2, 2, 2) - (2, 1, 1) = 0, 1, 1<br>Need for P5: (4, 3, 3) - (0, 0, 2) = 4, 3, 1<br>
+        <p class="u-text u-text-default u-text-1" style="font-size:1.25rem;">Need [i] = Max [i] - Allocation [i]<br>Need for P1: (7, 5, 3) - (0, 1, 0) = 7, 4, 3<br>Need for P2: (3, 2, 2) - (2, 0, 0) = 1, 2, 2<br>Need for P3: (9, 0, 2) - (3, 0, 2) = 6, 0, 0<br>Need for P4: (2, 2, 2) - (2, 1, 1) = 0, 1, 1<br>Need for P5: (4, 3, 3) - (0, 0, 2) = 4, 3, 1<br>
           <br>Available Resources of A, B and C are 3, 3, and 2.Now we check if each type of resource request is available for each process.<br>Step 1:&nbsp;For Process P1:Need &lt;= Available&nbsp; 7, 4, 3 &lt;= 3, 3, 2&nbsp; condition is&nbsp;false.<br>So, we examine another process, P2.&nbsp;<br>Step 2:&nbsp;For Process P2:Need &lt;= Available 1, 2, 2 &lt;= 3, 3, 2&nbsp; condition&nbsp;true&nbsp;<br>New available = available + Allocation(3, 3, 2) + (2, 0, 0) =&gt; 5, 3, 2&nbsp; &nbsp; Similarly, we examine another process P3.<br>Step 3:&nbsp;For Process P3:P3 Need &lt;= Available6, 0, 0 &lt; = 5, 3, 2 condition is&nbsp;false.<br>Similarly, we examine another process, P4.<br>Step 4:&nbsp;For Process P4:P4 Need &lt;= Available 0, 1, 1 &lt;= 5, 3, 2 condition is&nbsp;true&nbsp;<br>New Available resource = Available + Allocation 5, 3, 2 + 2, 1, 1 =&gt; 7, 4, 3&nbsp;<br>Similarly, we examine another process P5.<br>Step 5:&nbsp;For Process P5:&nbsp; P5 Need &lt;= Available 4, 3, 1 &lt;= 7, 4, 3 condition is&nbsp;true&nbsp;<br>New available resource = Available + Allocation 7, 4, 3 + 0, 0, 2 =&gt; 7, 4, 5&nbsp;<br>Now, we again examine each type of resource request for processes P1 and P3.<br>Step 6:&nbsp;For Process P1:P1 Need &lt;= Available 7, 4, 3 &lt;= 7, 4, 5 condition is&nbsp;true<br>New Available Resource = Available + Allocation 7, 4, 5 + 0, 1, 0 =&gt; 7, 5, 5<br>So, we examine another process P2.<br>Step 7:&nbsp;For Process P3:P3 Need &lt;= Available 6, 0, 0 &lt;= 7, 5, 5 condition is true&nbsp;<br>New Available Resource = Available + Allocation 7, 5, 5 + 3, 0, 2 =&gt; 10, 5, 7 Hence, we execute the banker's algorithm to find the safe state and the safe sequence like P2, P4, P5, P1 and P3.<br>
         </p>
       </div>
