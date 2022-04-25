@@ -1,0 +1,120 @@
+body{
+    height:100%;
+    width:99%;
+  }
+  
+  button{
+    border-color: black;
+    padding: 7px;
+    border-radius: 15px;
+    background-color: #d0dce3;
+  }
+  button:hover {
+    background-color: rgb(103, 150, 197);
+  }
+  
+  td, th{
+    padding: 5px;
+    background-color: #77d6bec4;
+  }
+  
+  input{
+    padding: 8px;
+    border-radius: 15px;
+    border-color: black;
+  }
+  
+  .wrapper{
+    padding:10px;
+  }
+  
+  .tables{
+    padding-bottom:8%;
+  }
+  
+  .allocation{
+    width:23%;
+    float:left;
+  }
+  
+  .max{
+    width:23%;
+    float:left;
+  }
+  
+  .need{
+    width:23%;
+    float:left;
+  }
+  
+  .available{
+    width:23%;
+    float:left;
+  }
+  
+  .input{
+    padding:20px;
+  }
+  
+  .seq{
+    padding-top:3%;
+    font-size: large;
+  }
+  
+  .comparison{
+    padding-top: 10%;
+    padding-left: 7%;
+    font-size: large;
+    
+  }
+  
+  .cname{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .cname:hover{
+    color:black;
+    font-size: 24px;
+  }
+
+ /*original  */
+ .nav {
+  text-align: center;
+  font-size: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  display: inline-block;
+  padding: 13px 13px;
+  color: #212529;
+  margin-right: 5px;
+}
+
+.nav-link:hover {
+  text-decoration:none;
+  background-color: #d0ebff;
+  border-bottom: 2px solid #339af0
+}
+.nav-link.current {
+  border-bottom: 2px solid #1971c2;
+}
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .nav {
+    font-size: 1.1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .nav-link {
+    padding: 20px 20px;
+  }
+}
