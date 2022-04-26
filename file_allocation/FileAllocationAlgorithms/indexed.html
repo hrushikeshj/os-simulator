@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        h1 {  text-align : center;}
+        a {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+       </style>
+        <title>Indexed File Allocation</title>
+
+
+
+        <link rel="stylesheet" type="text/css" href="../Index/css/bootswatch.css" />
+        <script type="text/javascript" src="lru.js"></script>
+
+    </head>
+    <body>
+
+      <a class="navbar-brand" href="../Index/index.html#firstPage"><img src = "back.png" width="60" height="60" ></a>
+        <br>
+        <div class="container">
+
+                    <h1>Indexed File Allocation</h1>
+                         <hr class="my-4">
+                    <p>
+                        Linked allocation solves the external-fragmentation and size-declaration problems of contiguous allocation. However, in the absence of a FAT, linked allocation cannot support efficient direct access, since the pointers to the blocks are scattered with the blocks themselves all over the disk and must be retrieved in order. Indexed allocation solves this problem by bringing all the pointers together into one location: the index block. Each file has its own index block, which is an array of disk-block addresses.
+Indexed allocation may require substantial overhead for its index block. Indexed allocation can be done in clusters of multiple blocks to increase throughput and to reduce the number of index entries needed. Indexing in large clusters is similar to contiguous allocation with extents.
+                    </p>
+                    <img src = "indexed.png" width = "500px">
+        </div>
+
+	</body>
+</html>
+
