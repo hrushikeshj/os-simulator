@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Banker's Algorithm</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./function.js"></script>
+        <link rel="stylesheet" href="../bankers_style.css"/>
+        <style>
+            p {text-align: center;
+                font-size: 30px;
+            }
+            nav{
+                background-color: #d0e9eb;
+            }
+            body {
+                background-image: url('../images/bg3.png');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+             }
+        </style>
+    </head>
+    <body > 
+        <nav class="nav">
+            <a href="../../index.html" class="nav-link">Home</a>
+            <a href="../bankers_theory.html" class="nav-link">Theory</a>
+            <a href="../bankers_simulation.html" class="nav-link">simulator-1</a>
+          </nav>       
+        <div class="container-fluid"><br/>
+            <br><br>
+            <p ><centre><b>Bankers Algorithm Simulator</b></centre> </p>
+            <br>
+            <table class="table text-center table-bordered order-list" id="tableId">
+                <thead>
+                    <tr>
+                        <th colspan="1">Process</th>
+                        <th colspan="3">Allocation</th>
+                        <th colspan="3">Max</th>
+                        <th colspan="3">Availiable</th>
+                        <th colspan="3">Need</th>
+                    </tr>
+                    <tr>
+                        <th><div class="btn-group">
+                                <input type="button" class="btn btn-primary btn-sm" id="addrow" value="+" />
+                                <input type="button" class="ibtnDel btn btn-danger btn-sm" value="-" />
+                        </div></th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                    </tr>
+                </thead>
+                <tbody id="tBody">
+                    <tr>
+                        <td>P0</td>
+                        <td><input id="0Allo0" class="form-control text-center" name="Allo0"/></td>
+                        <td><input id="0Allo1" class="form-control text-center" name="Allo1"/></td>
+                        <td><input id="0Allo2" class="form-control text-center" name="Allo2"/></td>
+                        <td><input id="0Max0" class="form-control text-center" name="Max0"/></td>
+                        <td><input id="0Max1" class="form-control text-center" name="Max1"/></td>
+                        <td><input id="0Max2" class="form-control text-center" name="Max2"/></td>
+                        <td><input id="0Avai0" class="form-control text-center" name="Avai0"/></td>
+                        <td><input id="0Avai1" class="form-control text-center" name="Avai1"/></td>
+                        <td><input id="0Avai2" class="form-control text-center" name="Avai2"/></td>
+                        <td><input id="0Need0" class="form-control text-center" name="Need0" disabled/></td>
+                        <td><input id="0Need1" class="form-control text-center" name="Need1" disabled/></td>
+                        <td><input id="0Need2" class="form-control text-center" name="Need2" disabled/></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td><input id="Avai0" class="form-control text-center" name="Avai0" disabled/></td>
+                        <td><input id="Avai1" class="form-control text-center" name="Avai1" disabled/></td>
+                        <td><input id="Avai2" class="form-control text-center" name="Avai2" disabled/></td>
+                        <td></td><td></td><td></td>
+                        
+                    </tr>
+                </tfoot>
+            </table>
+            <br>
+            <div class="row">
+                <div class="col-md-4"></div>                
+                <div class="col-md-4"><input id="cal" onclick="calculate()" type="button" class="btn btn-block btn-success pull-rigth" value="Calculate" style="color:white ;"/></div>
+                <div class="col-md-4"></div>
+            </div>
+            <br>
+            <div>
+                <label>Result:</label><input type="text" class="form-control" id="result"/>
+            </div>
+            
+        </div>
+    </body>
+</html>
