@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Memory Allocations:, 1. First-Fit Memory Allocation&nbsp;2. Best-Fit Memory Allocation&nbsp;3. Worst-Fit Memory Allocation&nbsp;4. Next-Fit Memory Allocation&nbsp;These are&nbsp;Contiguous&nbsp;memory allocation techniques:&nbsp;​">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Page 1</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Page-1.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 4.9.5, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Page 1">
+    <meta property="og:type" content="website">
+  </head>
+  <body data-home-page="Page-1.html" data-home-page-title="Page 1" class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-fcfe"><div class="u-clearfix u-sheet u-sheet-1">
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="../mem_simu.html" style="padding: 10px 20px;">simulation</a>
+</li></ul>
+          </div>
+          <div class="u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="../mem_simu.html">Simulation</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-align-center u-clearfix u-section-1" id="sec-6241">
+      <div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-default u-text-1">Memory Allocations:</h1>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-2" id="sec-1dfc">
+      <div class="u-clearfix u-sheet u-valign-top u-sheet-1">
+        <p class="u-align-left u-text u-text-black u-text-1">For both fixed and dynamic memory allocation schemes the operating system must keep list of each memory location noting which are free and which are busy. Then as new jobs come into the system, the free partitions must be allocated.&nbsp;&nbsp;<br>These partitions may be allocated by 4 ways:
+        </p>
+        <h1 class="u-align-left u-text u-text-2">
+          <span style="font-weight: 700;">1. First-Fit Memory Allocation&nbsp;<br>2. Best-Fit Memory Allocation&nbsp;<br>3. Worst-Fit Memory Allocation&nbsp;<br>4. Next-Fit Memory Allocation&nbsp;<br>These are&nbsp;Contiguous&nbsp;memory allocation techniques:&nbsp;
+          </span>
+        </h1>
+        <p class="u-align-left u-text u-text-3">
+          <span style="font-size: 1.5rem;">
+            <span style="font-weight: 700;">
+              <span style="text-decoration: underline !important;">First-Fit Allocation in Operating Systems:&nbsp;</span>
+              <br>&nbsp;
+            </span>
+            <br>
+            <span style="font-weight: 700;">
+              <a class="BCX0 Hyperlink SCXW137981683 u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="https://www.geeksforgeeks.org/program-first-fit-algorithm-memory-management/" target="_blank" rel="noreferrer noopener">First-Fit Memory Allocation</a>:&nbsp;<br>
+            </span>This method keeps the free/busy list of jobs organized by memory location, low-ordered to high-ordered memory. In this method, first job claims the first available memory with space more than or equal to it’s size. The operating system doesn’t search for appropriate partition but just allocate the job to the nearest memory partition available with sufficient size.&nbsp;<br>&nbsp;<br>
+            <span style="font-weight: 700;">Advantages of First-Fit Memory Allocation:&nbsp;</span>
+            <br>It is fast in processing. As the processor allocates the nearest available memory partition to the job, it is very fast in execution.&nbsp;<br>
+            <span style="font-weight: 700;">Disadvantages of First-Fit Memory Allocation :&nbsp;</span>
+            <br>It wastes a lot of memory. The processor ignores if the size of partition allocated to the job is very large as compared to the size of job or not. It just allocates the memory. As a result, a lot of memory is wasted and many jobs may not get space in the memory, and would have to wait for another job to complete.&nbsp;<br>
+            <span style="text-decoration: underline !important;">&nbsp;<br>
+              <span style="font-weight: 700;">Best-Fit Allocation in Operating System&nbsp;</span>
+            </span>
+            <br>&nbsp;<br>
+            <span style="font-weight: 700;">
+              <a class="BCX0 Hyperlink SCXW137981683 u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" href="https://www.geeksforgeeks.org/program-best-fit-algorithm-memory-management/" target="_blank" rel="noreferrer noopener">Best-Fit Memory Allocation</a>:&nbsp;
+            </span>&nbsp;<br>This method keeps the free/busy list in order by size – smallest to largest. In this method, the operating system first searches the whole of the memory according to the size of the given job and allocates it to the closest-fitting free partition in the memory, making it able to use memory efficiently. Here the jobs are in the order from smallest job to largest job.&nbsp;<br>As illustrated&nbsp;the operating system first search throughout the memory and allocates the job to the minimum possible memory partition, making the memory allocation efficient.&nbsp;
+          </span>
+          <br>
+          <br>
+          <span style="font-size: 1.5rem;">
+            <span style="font-weight: 700;">Advantages of Best-Fit Allocation :</span>&nbsp;&nbsp;<br>Memory Efficient. The operating system allocates the job minimum possible space in the memory, making memory management very efficient. To save memory from getting wasted, it is the best method.&nbsp;
+          </span>
+          <br>
+          <br>
+          <span style="font-size: 1.5rem;">
+            <span style="font-weight: 700;">Disadvantages of Best-Fit Allocation :&nbsp;</span>&nbsp;<br>It is a Slow Process. Checking the whole memory for each job makes the working of the operating system very slow. It takes a lot of time to complete the work.&nbsp;<br>&nbsp;<br>
+            <span style="font-weight: 700; text-decoration: underline !important;">Worst-Fit Allocation in Operating Systems:&nbsp;</span>
+            <br>&nbsp;<br>&nbsp;<span style="font-weight: 700;">
+              <a class="BCX0 Hyperlink SCXW137981683 u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3" href="https://www.geeksforgeeks.org/program-worst-fit-algorithm-memory-management/" target="_blank" rel="noreferrer noopener">Worst-Fit Memory Alloca</a>
+              <a class="BCX0 Hyperlink SCXW137981683 u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4" href="https://www.geeksforgeeks.org/program-worst-fit-algorithm-memory-management/" target="_blank" rel="noreferrer noopener">tion</a>:&nbsp;&nbsp;
+            </span>
+            <br>In this allocation technique, the process traverses the whole memory and always search for the largest hole/partition, and then the process is placed in that hole/partition. It is a slow process because it has to traverse the entire memory to search the largest hole.
+          </span>
+          <br>
+          <span style="font-size: 1.5rem;">&nbsp;&nbsp;<br>
+            <span style="font-weight: 700;">Advantages of Worst-Fit Allocation :&nbsp;</span>&nbsp;<br>Since this process chooses the largest hole/partition, therefore there will be large internal fragmentation. Now, this internal fragmentation will be quite big so that other small processes can also be placed in that leftover partition.&nbsp;&nbsp;
+          </span>
+          <br>
+          <br>
+          <span style="font-size: 1.5rem;">
+            <span style="font-weight: 700;">Disadvantages of Worst-Fit Allocation :&nbsp;</span>&nbsp;<br>It is a slow process because it traverses all the partitions in the memory and then selects the largest partition among all the partitions, which is a time-consuming process.&nbsp;
+          </span>
+          <br>
+          <br>
+          <span style="font-size: 1.5rem; font-weight: 700; text-decoration: underline !important;">Next-Fit Allocation in Operating Systems:<span style="text-decoration: underline !important;"></span>&nbsp;
+          </span>
+          <br>
+          <br>
+          <span style="font-size: 1.5rem;">Next fit is a modified version of&nbsp;<a href="https://www.geeksforgeeks.org/program-first-fit-algorithm-memory-management/" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5">‘</a>
+          </span>
+          <span style="font-size: 1.5rem;">first fit</span>
+          <span style="font-size: 1.5rem;">
+            <a href="https://www.geeksforgeeks.org/program-first-fit-algorithm-memory-management/" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-6">’</a>. It begins as the first fit to find a free partition but when called next time it starts searching from where it left off, not from the beginning. This policy makes use of a roving pointer. The pointer moves along the memory chain to search for a next fit. This helps in, to avoid the usage of memory always from the head (beginning) of the free block chain.&nbsp;<br>
+            <span style="font-weight: 700;">&nbsp;Advantages Over First-Fit:</span>
+          </span>
+          <br>
+          <br>
+          <span style="font-size: 1.5rem;">&nbsp; &nbsp; * First fit is a straight and fast algorithm, but tends to cut large portion of free parts into small pieces due to which, processes that need a large portion of memory block would not get anythingeven if the sum of all small pieces is greater than it required which is so-called external fragmentation problem.<br>&nbsp; &nbsp;* Another problem of the first fit is that it tends to allocate memory parts at the beginning of the memory, which may lead to more internal fragments at the beginning. Next fit tries to address this problem by starting the search for the free portion of parts not from the start of the memory, but from where it ends last time.<br>&nbsp; * Next fit is a very fast searching algorithm and is also comparatively faster than First Fit and Best Fit Memory Management Algorithms.&nbsp;
+          </span>
+        </p>
+      </div>
+    </section>
+    
+    
+  </body>
+</html>
