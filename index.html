@@ -42,17 +42,6 @@
         overflow-y: hidden;
         }
 
-        .b-example-divider {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        background-color: #ffffff;
-        box-shadow: 0;
-        }
-
         .bi {
         vertical-align: -.125em;
         pointer-events: none;
@@ -135,17 +124,6 @@
     </a>
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-            Page Replacement
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="page_replacement/index.html" class="link-dark rounded">Page Replacement Theory</a></li>
-            <li><a href="page_replacement/simulation.html" class="link-dark rounded">Page Replacement Algorithm</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#mem-allocation" aria-expanded="false">
             Memory Allocation
         </button>
@@ -156,22 +134,61 @@
           </ul>
         </div>
       </li>
-      <!--Add yout topic here.
-        Copy and paste the template and edit it-->
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#bank" aria-expanded="false">
+                Bankers Algorithm
+            </button>
+            <div class="collapse" id="bank">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="Bankers_algo/bankers_theory.html" class="link-dark rounded">Bankers Algorithm Theory</a></li>
+                <li><a href="Bankers_algo/bankers_simulation.html" class="link-dark rounded">Bankers theory simulation</a></li>
+              </ul>
+            </div>
+        </li>   
 
-      <!-- template--
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          title
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">title</a></li>
-            <li><a href="#" class="link-dark rounded">title</a></li>
-          </ul>
-        </div>
-      </li>
-      -->
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#process" aria-expanded="false">
+                Process Scheduling
+            </button>
+            <div class="collapse" id="process">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="process_scheduling/SRTF/srtf_theory.html" class="link-dark rounded">SRTF</a></li>
+                <li><a href="process_scheduling/HRRN/hrrn_theory.html" class="link-dark rounded">HRRN</a></li>
+                <li><a href="process_scheduling/LJF/ljf_theory.html" class="link-dark rounded">LJF</a></li>
+                <li><a href="process_scheduling/LRTF/lrtf_theory.html" class="link-dark rounded">LRTF</a></li>
+                <li><a href="process_scheduling/compare.html" class="link-dark rounded">Comparision</a></li>
+            </ul>
+            </div>
+        </li>
+
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#page-rep" aria-expanded="false">
+                Page Replacement
+            </button>
+            <div class="collapse" id="page-rep">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="page_replacement/index.html" class="link-dark rounded">Page Replacement Theory</a></li>
+                <li><a href="page_replacement/simulation.html" class="link-dark rounded">Page Replacement Algorithm</a></li>
+            </ul>
+            </div>
+        </li>
+
+        <!--Add yout topic here.
+            Copy and paste the template and edit it-->
+
+        <!-- template--
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#<your_id_here>" aria-expanded="false">
+            title
+            </button>
+            <div class="collapse" id="<your_id_here>">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-dark rounded">title</a></li>
+                <li><a href="#" class="link-dark rounded">title</a></li>
+            </ul>
+            </div>
+        </li>
+        -->
     </ul>
   </div>
   <div class="container">
