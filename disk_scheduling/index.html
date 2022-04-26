@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Disk Scheduling</title>
+    <style>
+      body {
+        background-image: url('background.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+      </style>
+  </head>
+  <body>
+    <div class="container" style="font-size: 20px;">
+      <br>
+    <h1 id="first" style="color: blue" class="text-center mb-4 display-5" style="color: blue;FONT-FAMILY: monospace;"><b>DISK SCHEDULING</b></h1>
+    <p>
+      Disk scheduling is done by operating systems to schedule I/O requests
+      arriving for the disk. Disk scheduling is also known as I/O scheduling. 
+
+      Disk scheduling is important because: 
+      <ul>
+          <li>
+              <p>
+                Multiple I/O requests may arrive by different processes and only one I/O request can be served at a time by the disk controller.
+                 Thus other I/O requests need to wait in the waiting queue and need to be scheduled.
+              </p>
+          </li>
+          <li>
+            <p>
+              Two or more request may be far from each other so can result in greater disk arm movement.
+            </p>
+          </li>
+          <li>
+            <p>Hard drives are one of the slowest parts of the computer system and thus need to be accessed in an efficient manner.
+
+            </p>
+          </li>
+      </ul>
+     </p>
+     <h2>
+       Types of Disk Scheduling Technique:
+     </h2>
+     <ul>
+      <li>FCFS scheduling algorithm</li>
+      <li>SCAN scheduling</li>
+      <li>C-SCAN scheduling</li>
+      <li>LOOK Scheduling</li>
+      <li>C-LOOK scheduling</li>  
+      <li>SSTF (shortest seek time first) algorithm</li>
+     </ul>
+     
+     <h2>FCFS Scheduling:</h2>
+     <div id="FCFS">
+         <P>
+             The simplet form of scheduling is first come,first served(FCFS) algorithm. The algorithm is fair and also the algorithm had no starvation case but doesnot provide the fastest service.
+            Example:<br>
+            Request sequence = {176, 79, 34, 60, 92, 11, 41, 114}<br>
+            Initial head position = 50<br>
+
+            Output:<br>
+            Total number of seek operations = 510<br>
+              Seek Sequence is<br>
+              176
+              79
+              34
+              60
+              92
+              11
+              41
+              114
+            </P>
+            <img src="fcfs.jpg">
+        </div>
+        <div id="SCAN">
+            <h2>SCAN Scheduling:</h2>
+            <p>In the SCAN algorithm disk arm starts at one end of the disk and moves toward the other end,servicing requests as it reaches each cylinder, until it gets to the other end of the disk. At the other end,the direction of head movement is reversed and servicing continues. The head continously scan back and forth across the disk.Hence, algorithm works as an elevator, thats why known as "Elevator Algorithm"</p>
+            <p>
+              Example:<br>
+              Request sequence = {176, 79, 34, 60, 92, 11, 41, 114}<br>
+              Initial head position = 50 <br>
+              Direction = left<br>
+
+              Output:<br>
+              Total number of seek operations = 226<br>
+                Seek Sequence is
+                41
+                34
+                11
+                0
+                60
+                79
+                92
+                114
+                176
+              </p>
+              <img src="scan.jpg">
+           
+        </div>
+        <div id="cscan">
+          <h2>C-SCAN Scheduling:</h2>
+          <p>
+            Circular SCAN(C-SCAN) scheduling is a variant of SCAN designed to provide a more unifom wait time.Like SCAN,C-SCAN moves the head from one end of the disk to other,servicing requests along the way. When the head reaches the other end, however it immidiately returns to the beginning of the disk without servicing any requests on the return trip. The CSCAN algorithm essentially treats the cylinder as circular list that wraps around from the final cylinder to the first one.
+          </p>
+          <p>
+            Example:<br>
+            Request sequence = {176, 79, 34, 60, 92, 11, 41, 114}<br>
+            Initial head position = 50<br>
+            Direction = right<br>
+
+            Output:
+            Initial position of head: 50<br>
+            Total number of seek operations = 389<br>
+            Seek Sequence is
+            60
+            79
+            92
+            114
+            176
+            199
+            0
+            11
+            34
+            41
+          </p>
+          <img src="cscan.png">
+        </div>
+        <div id="look">
+          <h2>LOOK Scheduling:</h2> 
+          <P>
+            LOOK is the advanced version of SCAN (elevator) disk scheduling algorithm which gives slightly better seek time than any other algorithm in the hierarchy (FCFS->SRTF->SCAN->C-SCAN->LOOK).  The LOOK algorithm services request similarly as SCAN algorithm meanwhile it also “looks” ahead as if there are more tracks that are needed to be serviced in the same direction. If there are no pending requests in the moving direction the head reverses the direction and start servicing requests in the opposite direction.
+            The main reason behind the better performance of LOOK algorithm in comparison to SCAN is because in this algorithm the head is not allowed to move till the end of the disk.
+          </P>
+          <p>
+            Example:<br>
+            Request sequence = {176, 79, 34, 60, 92, 11, 41, 114} <br>
+            Initial head position = 50<br>
+            Direction = right<br>
+
+            Output:<br>
+            Initial position of head: 50<br>
+            Total number of seek operations = 291<br>
+            Seek Sequence is
+            60
+            79
+            92
+            114
+            176
+            41
+            34
+            11
+          </p>
+          <img src="look.png">
+        </div>
+        <div id="clook">
+          <h2>C-LOOK Scheduling:</h2>
+          <p>C-LOOK is an enhanced version of both SCAN as well as LOOK disk scheduling algorithms. This algorithm also uses the idea of wrapping the tracks as a circular cylinder as C-SCAN algorithm but the seek time is better than C-SCAN algorithm.n this algorithm, the head services requests only in one direction(either left or right) until all the requests in this direction are not serviced and then jumps back to the farthest request on the other direction and service the remaining requests which gives a better uniform servicing as well as avoids wasting seek time for going till the end of the disk.</p>
+          <p>
+            Example :<br>
+            Input:<br>
+            Request sequence = {176, 79, 34, 60, 92, 11, 41, 114} <br>
+            Initial head position = 50 <br>
+            Direction = right<br>
+
+            Output:<br>
+            Initial position of head: 50 <br>
+            Total number of seek operations = 156 <br>
+            Seek Sequence is 
+            60 
+            79 
+            92 
+            114 
+            176 
+            11 
+            34 
+            41 
+          </p>
+          <img src="clook.jpg">
+        </div>
+        <div id="terms">
+          <h2><b>Terms Used:</b></h2>
+          <p>
+           <b>Seek Time:</b> Seek time is the time taken to locate the disk arm to a specified track where the data is to be read or write. So the disk scheduling algorithm that gives minimum average seek time is better.<br>
+          <b>Rotational Latency:</b> Rotational Latency is the time taken by the desired sector of disk to rotate into a position so that it can access the read/write heads. So the disk scheduling algorithm that gives minimum rotational latency is better.<br>
+        <b>Transfer Time:</b>Transfer time is the time to transfer the data. It depends on the rotating speed of the disk and number of bytes to be transferred.<br>
+        <b>Disk Access Time:</b><br>
+Disk Access Time = Seek Time + Rotational Latency + Transfer Time<br>
+
+          </p>
+
+        </div>
+      </div>
+        
+       </body>
+</html>
