@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -105,11 +106,26 @@
         .flex-shrink-0{
             position: fixed;
             height: 100vh;
-            box-shadow: 7px 0 5px -2px #e0e0e0;
         }
-        .container{
-            margin-left: 290px;
+        .side{
+            z-index: 999;
+            transition: all 300ms;
         }
+        .hide{
+            display: none;
+        }
+        #overlay {
+            position: fixed; /* Sit on top of the page content */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+            }
     </style>
 
 </head>
@@ -117,11 +133,16 @@
     
 <main>
 
-  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+  <div class="flex-shrink-0 p-3 bg-white side hide" style="width: 280px;">
+    <a href="#!" id="close" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-5 fw-semibold">OS Simulator</span>
+      <span class="fs-5 fw-semibold" style="margin-right: 30px;">OS Simulator</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+      </svg>
     </a>
+    
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#mem-allocation" aria-expanded="false">
@@ -203,23 +224,116 @@
         -->
     </ul>
   </div>
-  <div class="container">
-    <div class="display-6 text-center">Operating system</div>
-    <div class="row mt-4">
-        <p class="col-12 col-sm-8 fs-5">
-            An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
-            <br>
-            Time-sharing operating systems schedule tasks for efficient use of the system and may also include accounting software for cost allocation of processor time, mass storage, printing, and other resources.
-            For hardware functions such as input and output and memory allocation, the operating 
-            system acts as an intermediary between programs and the computer hardware, although 
-            the application code is usually executed directly by the hardware and frequently makes system calls to an OS function or is interrupted by it. Operating systems are found on many devices that contain a computer - from cellular phones and video game consoles to web servers and supercomputers.
-        </p>
-        <div class="col-12 col-sm-4">
-            <img src="images/os_flow.png" style=" height: 80%;" alt="page_replacement.jpg" class="">
+  <div id="overlay" class="hide"></div>
+  <div class="container-fluid m-0 p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="/">OS Simulator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item "><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item visually-hidden"><a class="nav-link" href="#!">Theory</a></li>
+                    <li class="nav-item visually-hidden"><a class="nav-link" href="#!">Simulation</a></li>
+                    <li class="nav-item"><a class="nav-link" id="hide-btn" href="#!"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                      </svg></a></li>
+                </ul>
+            </div>
         </div>
-      
+    </nav>
+    <!-- Page Content-->
+    <div class="container px-4 px-lg-5">
+        <!-- Heading Row-->
+        <div class="row gx-4 gx-lg-5 align-items-center my-5">
+            <div class="col-lg-8">
+                <h1 class="font-weight-light">Operating System</h1>
+                <p>An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
+                    <br>
+                    Time-sharing operating systems schedule tasks for efficient use of the system and may also include accounting software for cost allocation of processor time, mass storage, printing, and other resources.
+                    For hardware functions such as input and output and memory allocation, the operating 
+                    system acts as an intermediary between programs and the computer hardware, although 
+                    the application code is usually executed directly by the hardware and frequently makes system calls to an OS function or is interrupted by it. Operating systems are found on many devices that contain a computer - from cellular phones and video game consoles to web servers and supercomputers.
+                </p>
+            </div>
+            <div class="col-lg-4"><img class="img-fluid rounded mb-4 mb-lg-0" src="images/os_flow.png" alt="..." /></div>
+
+        </div>
+        <div class="card text-white bg-secondary my-5 py-4 text-center visually-hidden">
+            <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+        </div>
+        <!-- Content Row-->
+        <div class="row gx-4 gx-lg-4">
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Memory Allocation</h2>
+                        <p class="card-text">Memory allocation is a process by which computer programs are assigned memory or 
+                            space...</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="memory_alloc/theory/mem_theory.html">More Info</a></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Bankers Algorithm </h2>
+                        <p class="card-text">Banker's Algorithm is a deadlock avoidance algorithm. It is also used for deadlock 
+                            detection. This algorithm tells that if any system can go into a deadlock or not by analyzing the 
+                            currently allocated resources and the resources required by it in the future.</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="Bankers_algo/bankers_theory.html">More Info</a></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Process Scheduling</h2>
+                        <p class="card-text">The process scheduling is the activity of the process manager that handles the 
+                            removal of the running process from the CPU and the selection of another process on the basis of 
+                            a particular strategy.</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="process_scheduling/SRTF/srtf_theory.html">More Info</a></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Page Replacement</h2>
+                        <p class="card-text">In a operating systems that use paging for memory management, page 
+                            replacement algorithm are needed to decide which page needed to be replaced when new page 
+                            comes in.</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="page_replacement/index.html">More Info</a></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Disk Scheduling</h2>
+                        <p class="card-text">Disk scheduling is done by operating systems to schedule I/O requests arriving for the disk. Disk scheduling is also known as I/O scheduling.</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="disk_scheduling/">More Info</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
-  </div>
+  <script>
+      let hide = document.querySelector('#hide-btn');
+        hide.addEventListener('click',(e)=>{
+            e.preventDefault();
+            document.querySelector('.side').classList.toggle('hide');
+            document.querySelector('#overlay').classList.toggle('hide');
+        })
+
+        let close = document.querySelector('#close');
+        close.addEventListener('click',(e)=>{
+            e.preventDefault();
+            document.querySelector('.side').classList.toggle('hide');
+            document.querySelector('#overlay').classList.toggle('hide');
+        })
+  </script>
 </main>
   </body>
 </html>
