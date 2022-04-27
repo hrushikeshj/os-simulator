@@ -197,13 +197,25 @@
         </li>
 
         <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#page" aria-expanded="false">
+                Paging
+            </button>
+            <div class="collapse" id="page">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="os_paging/paging.html" class="link-dark rounded">Paging Theory</a></li>
+                <li><a href="os_paging/paging_simulation.html" class="link-dark rounded">Paging Simulation</a></li>
+            </ul>
+            </div>
+        </li>
+
+        <li class="mb-1">
             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#page-rep" aria-expanded="false">
                 Page Replacement
             </button>
             <div class="collapse" id="page-rep">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href="page_replacement/index.html" class="link-dark rounded">Page Replacement Theory</a></li>
-                <li><a href="page_replacement/simulation.html" class="link-dark rounded">Page Replacement Algorithm</a></li>
+                <li><a href="page_replacement/simulation.html" class="link-dark rounded">Page Replacement Simulation</a></li>
             </ul>
             </div>
         </li>
@@ -320,6 +332,17 @@
                             a particular strategy.</p>
                     </div>
                     <div class="card-footer"><a class="btn btn-primary btn-sm" href="process_scheduling/SRTF/srtf_theory.html">More Info</a></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Paging</h2>
+                        <p class="card-text">In a operating systems that use paging for memory management, page 
+                            replacement algorithm are needed to decide which page needed to be replaced when new page 
+                            comes in.</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="os_paging/paging.html">More Info</a></div>
                 </div>
             </div>
             <div class="col-md-4 mb-5">
