@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+<style>
+p {
+    font-size: 20px;
+}
+
+</style>
+
+<body>
+    <body style="background-color:rgb(156, 218, 225);">
+
+    <br>
+<center>
+    <h2><u>MULTIPROGRAMMING WITH A FIXED NUMBER OF TASKS</u></h2>
+</center>
+<p>In operating systems, Memory Management is the function responsible for allocating and managing a 
+    computer’s main memory. Memory Management function keeps track of the status of each memory location, 
+    either allocated or free to ensure effective and efficient use of Primary Memory. 
+<br>There are two Memory Management Techniques: Contiguous, and Non-Contiguous. In Contiguous Technique,
+executing process must be loaded entirely in the main memory. MFT is one of the Contiguous Techniques.
+This is the oldest and simplest technique used to put more than one process in the main memory. In this 
+partitioning, the number of partitions (non-overlapping) in RAM is fixed but the size of each partition 
+may or may not be the same. As it is a contiguous allocation, hence no spanning is allowed.
+ Here partitions are made before execution or during system configure.
+</p>
+<center>
+<img src="mft.png" alt="MFT" width="600" height="333">
+</center>
+<p>As illustrated in above figure, first process is only consuming 3MB out of 4MB in the main memory. 
+    Hence, Internal Fragmentation in first block is (4-3) = 1MB. 
+    Sum of Internal Fragmentation in every block = (4-3)+(4-3)+(4-3)+(4-3)= 1+1+1+1 =4MB.
+<br> Suppose process P5 of size 4MB comes. But this process cannot be accommodated in spite of available
+ free space because of contiguous allocation (as spanning is not allowed). Hence, 4MB becomes part of 
+ External Fragmentation.</p>
+ <h2><u>ADVANTAGES</u></h2>
+<h3>1.Easy to implement:</h3>
+<p>Algorithms needed to implement Fixed Partitioning are easy to implement. It simply requires putting
+a process into a certain partition without focusing on the emergence of Internal and External Fragmentation.</p>      
+<h3>2.Little OS overhead: </h3>
+<p>Processing of Fixed Partitioning requires lesser excess and indirect computational power.</p>
+<h2><u>DISADVANTAGES</u></h2>
+<h3>1.Internal Fragmentation: </h3>
+<p>Main memory use is inefficient. Any program, no matter how small, occupies an entire partition.
+This can cause internal fragmentation.</p>
+<h3>2.External Fragmentation:</h3>
+<p>The total unused space (as stated above) of various partitions cannot be used to load the processes even 
+though there is space available but not in the contiguous form (as spanning is not allowed).</p>
+<h3>3.Limit process size: </h3>
+<p>Process of size greater than the size of the partition in Main Memory cannot be accommodated. The 
+partition size cannot be varied according to the size of the incoming process size. Hence, the process
+ size of 32MB in the above-stated example is invalid.</p>
+<h3>4.Limitation on Degree of Multiprogramming: </h3>
+<p>Partitions in Main Memory are made before execution or during system configure. Main Memory is divided
+into a fixed number of partitions. Suppose if there are n1   partitions in RAM and n2   are the number
+of processes, then n2 <= n1   condition must be fulfilled. Number of processes greater than the number
+of partitions in RAM is invalid in Fixed Partitioning.</p>
+</head>
+</body>
+</html>
