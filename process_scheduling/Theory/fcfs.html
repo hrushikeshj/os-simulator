@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/index.css"><style>
+p {
+    font-size: 20px;
+}
+</style>
+
+<body style="background-color:rgb(92, 196, 232); font-family:Courier New">
+        <!-- Navigation Bar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark", style="font-family:Courier New; background-color:black">
+            <a class="navbar-brand" href="../../index.html">Home</a>
+            <a class="navbar-brand" href="../PS/src/fcfs.html">Simulation</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        </nav>
+        <br>
+<center>
+    <h2><u>FIRST COME FIRST SERVE (FCFS)</u></h2>
+</center>
+        <p>First Come First Serve (FCFS) is an operating system scheduling algorithm that automatically executes queued requests 
+            and processes in order of their arrival. It is the easiest and simplest CPU scheduling algorithm. In this type of algorithm, 
+            processes which requests the CPU first get the CPU allocation first. This is managed with a FIFO queue.<br><br>
+Completion Time: Time at which process completes its execution.<br>
+Turn Around Time: Time Difference between completion time and arrival time.<br> Turn Around Time = Completion Time – Arrival Time<br>
+Waiting Time(W.T): Time Difference between turn around time and burst time. <br>
+Waiting Time = Turn Around Time – Burst Time<br><br>
+<u>EXAMPLE:</u><br>
+In the following example, we have 4 processes with process ID P0, P1, P2, and P3. The arrival time of P0 is 0, P1 is 1, P2 is 2, 
+and P3 is 3. The arrival time and burst time of the processes are given in the following table.
+<center>
+    <img src="img1.png" alt="FCFS" width="600" height="333"><br>
+    <img src="img2.png" alt="FCFS" width="600" height="122"><br><br>
+  
+    <p>Average Waiting Time = 0+5+12+21/4<br>
+
+                         = 38/4<br>
+
+                         = 9.5 ms<br>
+
+Average Turnaround Time = 6+13+22+33/4<br>
+
+                         =74/4<br>
+
+                         = 18.5 ms<br></p>
+                        </center>
+<h3><u>ADVANTAGES</u></h3>
+<p>1.The simplest form of a CPU scheduling algorithm<br>
+2.Easy to program<br>
+3.First come first served<br></p>
+
+<h3><u>DISADVANTAGES</u></h3>
+<p>1.It is a Non-Preemptive CPU scheduling algorithm, so after the process has been allocated to the CPU, it will never release the CPU until it finishes executing.<br>
+2.The Average Waiting Time is high.<br>
+3.Short processes that are at the back of the queue have to wait for the long process at the front to finish.<br>
+4.Not an ideal technique for time-sharing systems.<br>
+5.Because of its simplicity, FCFS is not very efficient.</p>
+</p>
+</head>
+</body>
+</html>
