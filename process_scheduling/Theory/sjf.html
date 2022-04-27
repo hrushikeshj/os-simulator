@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css"></link><style>
+    
+p {
+    font-size: 20px;
+}
+
+</style>
+<body style="background-color:rgb(92, 196, 232); font-family:Courier New">
+    <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark", style="font-family:Courier New; background-color:black">
+            <a class="navbar-brand" href="../../index.html">Home</a>
+            <a class="navbar-brand" href="../PS/src/sjf.html">Simulation</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        </nav>
+
+<center>
+    <h1><u>Shortest Job First</u></h1>
+    </center>
+    <p>Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen
+       for the next execution. This scheduling method can be preemptive or non-preemptive. It significantly 
+         reduces the average waiting time for other processes awaiting execution.</p>
+         <u>EXAMPLE:</u><br>
+      <center>   
+         
+<img src="img3.png" alt="sjf" width="600" height="300"><br>
+<img src="img4.png" alt="sjf" width="600" height="200"><br><br>
+    
+    
+   <p>Average waiting time=0+7+4+8+10/5=5.8 <br>
+    Average turnaround time=6+10+6+11+14/5=9.4<br><br></p>
+</center>
+<h2><u>ADVANTAGES</u></h2>
+<p>1.SJF is frequently used for long term scheduling.<br>
+2.It reduces the average waiting time over FIFO (First in First Out) algorithm.<br>
+3.SJF method gives the lowest average waiting time for a specific set of processes.<br>
+4.It is appropriate for the jobs running in batch, where run times are known in advance.<br>
+5.Probably optimal with regard to average turnaround time.<br></p>
+
+<h2><u>DISADVANTAGES</u></h2>
+<p>1.Job completion time must be known earlier, but it is hard to predict.<br>
+2.It is often used in a batch system for long term scheduling.<br>
+3.SJF can’t be implemented for CPU scheduling for the short term. It is because there is no specific method to predict the length of the upcoming CPU burst.<br>
+4.This algorithm may cause very long turnaround times or starvation.<br>
+5.Requires knowledge of how long a process or job will run.<br>
+6.It leads to the starvation that does not reduce average turnaround time.<br>
+7.It is hard to know the length of the upcoming CPU request.<br></p>
+</p>
+</head>
+</body>
+</html>

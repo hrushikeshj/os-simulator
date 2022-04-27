@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Process Scheduling</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/index.css">
+        <script type="text/javascript" src="../js/index.js"></script>
+    </head>
+    <body style="background-color:DodgerBlue">
+            <!-- Navigation Bar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark", style="font-family:Courier New">
+                <a class="navbar-brand" href="../../../index.html">Home</a>
+                <a class="navbar-brand" href="../../Theory/fcfs.html">Theory</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        </nav>
+        <br>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-3", style="font-family:Times New Roman; color:red">FCFS Scheduling</h1>
+                <br>
+				<div id="showinput"></div>
+				<hr>
+                <div class="row">
+                    <div class="form-group" style="margin-left:50px; float:left;  width: 20%; font-family:'Courier New'">
+                        <label class="col-form-label" for="inputDefault">Enter arrival time:</label>
+                        <input class="form-control" id="newat" name="at" placeholder="Arrival Time" type="text" size="35">
+                    </div>
+                    <div class="form-group" style="margin-left:50px; float:left;  width: 20%; font-family:'Courier New'">
+                        <label class="col-form-label" for="inputDefault">Enter burst time:</label>
+                        <input class="form-control" id="newbt" name="bt" placeholder="Burst Time" type="text" size="35">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="margin-left: 36px; font-family:'Courier New'" onclick="addToList()">Add</button>
+                <button type="submit" class="btn btn-primary" style="margin-left: 36px; float: right; font-family:'Courier New'" onclick="clearData()">Clear Data</button>
+                <button type="submit" class="btn btn-primary" style="margin-left: 36px; float: right; font-family:'Courier New'" onclick="showOutput(0)">Schedule It!</button>
+            </div>
+
+            <!-- Gantt Chart -->
+            <div style="margin-top: 150px; font-family:'Courier New'">
+                <h2 id ="chart-header" style="text-align:center"></h2>
+                <br/>
+                <div>
+                    <div id="gantt"></div>
+                    <br>
+                    <div id="timer"></div>
+                </div>
+                <br/><br/>
+                <div>
+                    <div style="width: 50%; text-align:center;float:left; font-size: 20px;" id="awt1">
+                    </div>
+                    <div style="width: 50%; text-align:center;float:left;font-size:20px;" id="atat1">
+                    </div>
+                </div>
+            </div>
+			<!-- CPU Operations -->
+            <div style="margin-top: 100px; font-family:'Courier New'">
+                <h3 id="operations-heading" style="text-align:center;"></h3>
+                <div id="operations"></div>
+            </div>
+			<!-- Table -->
+            <div style="margin-top: 50px; font-family:'Courier New'">
+                <h2 id="table-heading" style="text-align:center;"></h2>
+                <div>
+                    <table id="tab" class="table table-striped centered responsive-table" style="border-color: black; border-width: 2px; text-align: center; background-color: white;">
+                        <thead id="thead">
+                        </thead>
+                        <tbody id="ptable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
