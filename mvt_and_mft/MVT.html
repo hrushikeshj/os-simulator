@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<style>
+p {
+    font-size: 20px;
+}
+</style>
+<body>
+    <body style="background-color:rgb(156, 218, 225);">
+
+<center>
+<h2><u>MULTIPROGRAMMING WITH A VARIABLE NUMBER OF TASKS</u></h2>
+</center>
+<p>MVT (Multiprogramming with a Variable number of Tasks) is the other memory management 
+technique in which each process gets allocated to the partition according to the amount of memory it needs. That is, the partitioning 
+of memory is dynamic and changes as processes enter and leave the system. MVT is a more efficient
+user of resources.Initially ram is empty and partitions are made during the run-time according to process’s need instead of partitioning
+during system configure.</p>
+ 
+<p>The size of partition will be equal to incoming process.
+The partition size varies according to the need of the process so that the internal fragmentation can be avoided to ensure efficient 
+utilisation of ram.
+Number of partitions in ram is not fixed and depends on the number of incoming process and Main Memory’s size.</p>
+ <center>
+<img src="mvt.png" alt="MFT" width="600" height="333">
+</center>
+<p>For example, suppose in above example- process P1(5MB) and process P3(3MB) completed their execution. 
+Hence two spaces are left i.e. 5MB and 3MB. Let’s suppose process P5 of size 8MB comes. The empty space
+in memory cannot be allocated as no spanning is allowed in contiguous allocation. The rule says that 
+process must be contiguously present in main memory to get executed. Hence it results in External 
+Fragmentation.
+Now P5 of size 8 MB cannot be accommodated in spite of required available space because in contiguous
+nospanning is allowed.</p>
+<h2><u>ADVANTAGES</u></h2>
+<h3>1.No Internal Fragmentation:</h3>
+<p>In variable Partitioning, space in main memory is allocated strictly according to the need of process, 
+hence there is no case of internal fragmentation. There will be no unused space left in the partition.</p>
+<h3>2.No restriction on Degree of Multiprogramming:</h3>
+<p>More number of processes can be accommodated due to absence of internal fragmentation. A process can be 
+loaded until the memory is empty.</p>
+<h3>3.No Limitation on the size of the process:</h3>
+<p>In Fixed partitioning, the process with the size greater than the size of the largest partition could not
+be loaded and process can not be divided as it is invalid in contiguous allocation technique. Here, In
+variable partitioning, the process size can’t be restricted since the partition size is decided 
+according to the process size.</p>
+<h2><u>DISADVANTAGES</u></h2>
+<h3>1.Difficult Implementation:</h3>
+<p>Implementing variable Partitioning is difficult as compared to Fixed Partitioning as it involves 
+allocation of memory during run-time rather than during system configure.</p>
+<h3>2.External Fragmentation:</h3>
+<p>There will be external fragmentation inspite of absence of internal fragmentation.</p>
+
+
+</body>
+</html>
+
