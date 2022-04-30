@@ -19,7 +19,10 @@
         -moz-user-select: none;
         user-select: none;
       }
-
+      .container{
+          max-width: 1490px;
+          padding-top: 10px;
+      }
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -28,6 +31,7 @@
       body {
         min-height: 100vh;
         min-height: -webkit-fill-available;
+      
         }
 
         html {
@@ -127,6 +131,7 @@
             z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
             cursor: pointer; /* Add a pointer on hover */
             }
+           
     </style>
 
 </head>
@@ -158,17 +163,19 @@
             </div>
         </li>
 
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#mem-allocation" aria-expanded="false">
-            Memory Allocation
-        </button>
-        <div class="collapse" id="mem-allocation">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="memory_alloc/theory/mem_theory.html" class="link-dark rounded">Memory Allocation Theory</a></li>
-            <li><a href="memory_alloc/mem_simu.html" class="link-dark rounded">Memory Allocation Simulation</a></li>
-          </ul>
-        </div>
-      </li>
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#mem-allocation" aria-expanded="false">
+                Memory Allocation
+            </button>
+            <div class="collapse" id="mem-allocation">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="memory_alloc/theory/mem_theory.html" class="link-dark rounded">Memory Allocation Theory</a></li>
+                <li><a href="memory_alloc/mft/ff/ff.html" class="link-dark rounded">MFT  Simulations</a></li>
+                <li><a href="memory_alloc/mvt/ff/ff.html" class="link-dark rounded">MVT  Simulations</a></li>
+              </ul>
+            </div>
+          </li>
+    
 
         <li class="mb-1">
             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#bank" aria-expanded="false">
@@ -295,29 +302,32 @@
   </div>
   <div id="overlay" class="hide"></div>
   <div class="container-fluid m-0 p-0">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
         <div class="container px-5">
-            <a class="navbar-brand" href="/">OS Simulator</a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item "><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                   
                     <li class="nav-item visually-hidden"><a class="nav-link" href="#!">Theory</a></li>
                     <li class="nav-item visually-hidden"><a class="nav-link" href="#!">Simulation</a></li>
-                    <li class="nav-item"><a class="nav-link" id="hide-btn" href="#!"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <li class="nav-item"><a class="nav-link" id="hide-btn" href="#!" style=" margin-left: -100px;" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                       </svg></a></li>
                 </ul>
             </div>
+            <a class="navbar-brand" href="/" style=" font-family: 'Trebuchet MS', sans-serif; font-size: 35px; margin-right: 1000px;">OS Simulator</a>
         </div>
     </nav>
     <!-- Page Content-->
-    <div class="container px-4 px-lg-5">
+    <div class="container px-4 px-lg-5" style=" background-image: url('background11.png'); background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
         <!-- Heading Row-->
         <div class="row gx-4 gx-lg-5 align-items-center my-5">
             <div class="col-lg-8">
-                <h1 class="font-weight-light">Operating System</h1>
-                <p>An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
+                <h1 class="font-weight-light" style="color: white;">Operating System</h1>
+                <br><p style="text-align: justify;color: white;">An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
                     <br>
                     Time-sharing operating systems schedule tasks for efficient use of the system and may also include accounting software for cost allocation of processor time, mass storage, printing, and other resources.
                     For hardware functions such as input and output and memory allocation, the operating 
