@@ -25,16 +25,15 @@ function displayPartSize() {
     num_parts = Number($("#num-parts").val());
     var htmlText = '';
     var i;
-    for(i = 1; i <= num_parts; i++)
-    {
-        htmlText += 
-        `
-        <div class="form-group">
-            <label>Size of partition ` + String(i)  + ` : </label>
-            <input type="text" class="form-control" id="part-size-` + String(i) + `" placeholder="Enter size of partitition ` + String(i) + `">
-        </div>
-        `;
-    }
+    htmlText += 
+    `     <div class="form-group">       
+        <input type="text" class="form-control" id="part-size" placeholder="Enter size of partitition ">
+    </div>
+    `;
+    var partsize222 = Number($("#part-size").val());
+for(i = 1; i <= num_parts; i++){
+         part_size[i]=partsize222;
+}
     htmlText += 
     `
     <button type="submit" class="btn btn-primary" id="parts-size-btn">Go</button>
@@ -48,9 +47,11 @@ function displayPartSize() {
 }
 
 function startColumn2() {
+    
     var htmlText = 
     `
-    <button type="submit" class="btn btn-primary" id="add-pro-btn">Add process</button>
+    <button type="submit" class="btn btn-primary" id="add-pro-btn" style="margin-block: 15px;" >Add process</button>
+    <br>
     <button type="submit" class="btn btn-primary" id="rem-pro-btn">Remove process</button>
     `;
     $("#add-rem-pro-btns").html(htmlText);
@@ -193,7 +194,7 @@ function drawPartMemory() {
     var i;
     for(i = 0; i < num_parts; i++)
     {
-        var size = Number($("#part-size-" + String(i+1)).val());
+        var size = Number($("#part-size").val());
         part_size[i] = size;
         total_mem_size += size;
         part_occupied[i] = 0;

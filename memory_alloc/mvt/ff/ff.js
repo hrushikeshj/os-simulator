@@ -26,7 +26,8 @@ $(document).ready(function() {
 function startColumn2() {
     var htmlText = 
     `
-    <button type="submit" class="btn btn-primary" id="add-pro-btn">Add process</button>
+    <button type="submit" class="btn btn-primary" id="add-pro-btn" style="margin-block: 15px;" >Add process</button>
+    <br>
     <button type="submit" class="btn btn-primary" id="rem-pro-btn">Remove process</button>
     `;
     $("#add-rem-pro-btns").html(htmlText);
@@ -255,7 +256,7 @@ function removeFromQ(pro_id) {
 function drawInputQTable() {
     var htmlText = 
     `
-    <button type="submit" class="btn btn-primary md-3" id="compact-btn">Compact</button> 
+    <button type="submit" class="btn btn-primary md-3" id="compact-btn">Re-Arrange</button> 
     <table>
     <tr>
         <th colspan="0">Input Queue</th>
