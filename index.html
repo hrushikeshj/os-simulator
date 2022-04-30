@@ -131,7 +131,12 @@
             z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
             cursor: pointer; /* Add a pointer on hover */
             }
-           
+            .main-back {
+            background-image: url('spiral.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            }
     </style>
 
 </head>
@@ -322,11 +327,11 @@
         </div>
     </nav>
     <!-- Page Content-->
-    <div class="container px-4 px-lg-5" style=" background-image: url('background11.png'); background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
+    <div class="container px-4 px-lg-5 main-back">
         <!-- Heading Row-->
         <div class="row gx-4 gx-lg-5 align-items-center my-5">
             <div class="col-lg-8">
-                <h1 class="font-weight-light" style="color: white;">Operating System</h1>
+                <h1 class="font-weight-light" style="color: white; margin-bottom: 30px;">Operating System</h1>
                 <br><p style="text-align: justify;color: white;">An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
                     <br>
                     Time-sharing operating systems schedule tasks for efficient use of the system and may also include accounting software for cost allocation of processor time, mass storage, printing, and other resources.
@@ -335,7 +340,7 @@
                     the application code is usually executed directly by the hardware and frequently makes system calls to an OS function or is interrupted by it. Operating systems are found on many devices that contain a computer - from cellular phones and video game consoles to web servers and supercomputers.
                 </p>
             </div>
-            <div class="col-lg-4"><img class="img-fluid rounded mb-4 mb-lg-0" src="images/os_flow.png" alt="..." /></div>
+            <div class="col-lg-4"><img class="img-fluid rounded mb-4 mb-lg-0" style="width: 55%;" src="images/os_flow.png" alt="..." /></div>
 
         </div>
         <div class="card text-white bg-secondary my-5 py-4 text-center visually-hidden">
