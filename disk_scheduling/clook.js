@@ -1,4 +1,4 @@
-
+/*
 var head=document.querySelector("#start");
 var seq = document.querySelector("#seq");
 var out = document.querySelector("#out");
@@ -8,9 +8,12 @@ var btn = document.querySelector("#btn");
 btn.addEventListener("click", ()=>{
     console.log(seq.value.split(","))
     CLOOK(seq.value.split(","), +head.value, seq.value.split(",").length)
-})
+})*/
 function CLOOK(arr, head,size)
 {
+	var seq = document.querySelector("#seq");
+var out = document.querySelector("#out");
+var seq_out = document.querySelector("#seq-out");
     out.innerHTML = '';
 	seq_out.innerHTML = '';
 	document.getElementById('can-div').innerHTML = `<canvas id="myChart"></canvas>`
