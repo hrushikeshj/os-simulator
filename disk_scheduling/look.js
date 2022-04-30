@@ -1,21 +1,20 @@
 
-var head=document.querySelector("#start");
-var seq = document.querySelector("#seq");
-var dir = document.querySelector("#dir");
-var out = document.querySelector("#out");
-var seq_out = document.querySelector("#seq-out");
 
+/*
 var btn = document.querySelector("#btn");
 
 btn.addEventListener("click", ()=>{
     console.log(seq.value.split(","))
     LOOK(seq.value.split(","), +head.value, seq.value.split(",").length,dir.value)
 })
-
+*/
 
 function LOOK(arr, head,size, direction)
 {
-
+	let seq = document.querySelector("#seq");
+	let dir = document.querySelector("#dir");
+	let out = document.querySelector("#out");
+	let seq_out = document.querySelector("#seq-out");
     out.innerHTML = '';
 	seq_out.innerHTML = '';
 	document.getElementById('can-div').innerHTML = `<canvas id="myChart"></canvas>`

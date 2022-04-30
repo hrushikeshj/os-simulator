@@ -1,16 +1,15 @@
-var head=document.querySelector("#start");
-var seq = document.querySelector("#seq");
-var out = document.querySelector("#out");
-var seq_out = document.querySelector("#seq-out");
-var btn = document.querySelector("#btn");
 
-btn.addEventListener("click", ()=>{
+
+/*btn.addEventListener("click", ()=>{
     console.log(seq.value.split(","))
     FCFS(seq.value.split(","), +head.value, seq.value.split(",").length)
-})
+})*/
 
 function FCFS(arr, head, size)
 {
+	var seq = document.querySelector("#seq");
+	var out = document.querySelector("#out");
+	var seq_out = document.querySelector("#seq-out");
 	org_head = head;
 	out.innerHTML = '';
 	seq_out.innerHTML = '';//new
