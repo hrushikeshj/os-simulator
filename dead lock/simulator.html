@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    body {
+      background-image: url('1.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 120%;
+      filter: brightness(120%);
+    }
+    </style>
+    
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../../assets/img/favicons/site.webmanifest">
+  <link rel="mask-icon" href="../../assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../../assets/img/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="../../assets/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="./../../assets/css/style.css" rel="stylesheet">
+
+  <!-- EXTRA LINKS -->
+
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- =======================================================
+  * Template Name: Vesperr - v4.7.0
+  * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <!-- SCRIPT FOR THE PAGE-->
+  <title>Single Instance Problem</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<script>
+  var num;
+  var index;
+  var alloc = [];
+  var need = [];
+  var p = [];
+  var r = [];
+  var visited = [];
+  var recStack = [];
+  var index;
+  var num;
+  var g;
+  var q = [];
+  //exaple in  http://www.embeddedlinux.org.cn/rtconforembsys/5107final/LiB0100.html
+  function addInitials() {
+    num = parseInt(document.getElementById("totalres").value);
+    if (isNaN(num) || num <= 0)
+      window.alert("Enter valid input");
+    else {
+      index = parseInt(document.getElementById("totalpros").value);
+      if (isNaN(index)) {
+        var d1 = document.getElementById("allocated");
+        d1.innerHTML = "";
+        var d2 = document.getElementById("need");
+        d2.innerHTML = "";
+        //window.alert("Enter valid input"); 
+      }
+      else {
+        var d1 = document.getElementById("allocated");
+        d1.innerHTML = "";
+        var p = document.createElement("h5");
+        p.setAttribute("style", "font-size:25px","text-align:left");
+        p.textContent = "Allocation matrix ( 1 or 0) ";
+        d1.appendChild(p);
+        var br = document.createElement("br");
+        for (var i = 0; i < index; i++) {
+          var card = document.createElement("card");
+          card.setAttribute("style", "width:100%;float:left;height:50px;text-align:center;");
+          var p1 = document.createElement("p");
+          p1.setAttribute("style","font-weight:bold;margin-left:0px;float:left;margin-right:0px;");
+          p1.textContent = "Process " + (i + 1) + ": ";
+          card.appendChild(p1);
+          for (var j = 0; j < num; j++) {
+            // var card =document.createElement("div");
+            // card.setAttribute("style","width:90px;float:left;margin-right:50px;height:50px;");
+            // var p = document.createElement("div");
+            // p.setAttribute("class","input-group input-group-sm");
+            // var subDiv = document.createElement("div");
+            // subDiv.setAttribute("class","input-group-prepend");
+            // var text = document.createElement("span");
+            // text.setAttribute("class","input-group-text");
+            // text.setAttribute("id","inputGroup-sizing-sm");
+            var inp1 = document.createElement("input");
+            inp1.setAttribute("id", "AR" + i + "," + j);
+            inp1.setAttribute("placeholder", "R-" + (j + 1));
+            inp1.setAttribute("style","height:28px;width:50px;text-align:center;margin-right:5px;float:left;");
+            // inp1.setAttribute("class","form-control");
+            // inp1.setAttribute("aria-lable","Small");
+            // inp1.setAttribute("aria-describedby","inputGroup-sizing-sm");
+
+
+
+            card.appendChild(inp1);
+          }
+          d1.appendChild(card);
+          d1.appendChild(br);
+          d1.appendChild(br);
+        }
+        var d2 = document.getElementById("need");
+        d2.innerHTML = "";
+        var c = document.createElement("card");
+        c.setAttribute("style","font-size:25px","width:100%;height:50px;");
+        d1.appendChild(c);
+        var p2 = document.createElement("h5");
+        p2.setAttribute("style","font-size:25px","text-align:left");
+        p2.textContent = "Need matrix ( 1 or 0) ";
+        d2.appendChild(p2);
+        var br = document.createElement("br");
+        for (var i = 0; i < index; i++) {
+          var card1 = document.createElement("card");
+          card1.setAttribute("style", "width:100%;float:left;height:50px;text-align:center;");
+          var p3 = document.createElement("p");
+          p3.setAttribute("style","color:black;font-weight:bold;margin-left:10px;float:left;margin-right:20px");
+          p3.textContent = "Process " + (i + 1) + ": ";
+          card1.appendChild(p3);
+          for (var j = 0; j < num; j++) {
+            var inp1 = document.createElement("input");
+            inp1.setAttribute("id", "NR" + i + "," + j);
+            inp1.setAttribute("placeholder", "R-" + (j + 1));
+            inp1.setAttribute("style","height:28px;width:50px;text-align:center;margin-right:5px;float:left;");
+            card1.appendChild(inp1);
+          }
+          d2.appendChild(card1);
+          d2.appendChild(br);
+        }
+      }
+    }
+  }
+
+
+  class Graph {
+    constructor(V) {
+      this.V = V;
+      this.AdjList = new Map();
+    }
+    addVertex(v) {
+      //console.log(v);
+      this.AdjList.set(v, []);
+    }
+    addEdge(v, w) {
+      this.AdjList.get(v).push(w); // Add w to v’s list.
+    }
+
+    isCyclicUtil(v) {
+      if (visited[v] == false) {
+        visited[v] = true;
+        recStack[v] = true;
+        // Recur for all the vertices adjacent to this vertex
+        var get_neighbours = this.AdjList.get(v)
+        for (var i in get_neighbours) {
+          var get_elem = get_neighbours[i];
+          q.push(get_elem);
+          if (!visited[get_elem] && g.isCyclicUtil(get_elem))
+            return true;
+          else if (recStack[get_elem])
+            return true;
+        }
+      }
+      recStack[v] = false;  // remove the vertex from recursion stack
+      return false;
+    }
+
+
+    // Returns true if the graph contains a cycle, else false.
+    isCyclic() {
+      for (var i = 0; i < 40; i++) {
+        visited[i] = false;
+        recStack[i] = false;
+      }
+      // Call the recursive helper function to detect cycle in different
+      // DFS trees
+      for (var i = 0; i < p.length; i++) {
+        if (g.isCyclicUtil(p[i]))
+          return true;
+      }
+      for (var i = 0; i < r.length; i++) {
+        if (g.isCyclicUtil(r[i]))
+          return true;
+      }
+      return false;
+    }
+  };
+
+  function createGraph() {
+    g = new Graph(40);
+    for (var i = 0; i < p.length; i++)
+      g.addVertex(p[i]);
+    for (var i = 0; i < r.length; i++)
+      g.addVertex(r[i]);
+
+    for (var i = 0; i < index; i++) {
+      for (var j = 0; j < num; j++) {
+        if (alloc[i][j] != 0) {
+          g.addEdge(20 + j, i);
+        }
+      }
+    }
+    for (var i = 0; i < index; i++) {
+      for (var j = 0; j < num; j++) {
+        if (need[i][j] != 0)
+          g.addEdge(i, j + 20);
+      }
+    }
+    var div = document.getElementById("output");
+    var div1 = document.getElementById("output1");
+    div.innerHTML = "";
+    if (g.isCyclic()) {
+      var pp = document.createElement("h5");
+      pp.setAttribute("style","font-size: 30px", "margin-left:20px;");
+      pp.textContent = " A cycle is found in the graph, and a deadlock exists";
+      div.appendChild(pp);
+      var card2 = document.createElement("h5");
+      card2.textContent = "One present Cycle Is:";
+      card2.setAttribute("style","font-size: 30px","margin-top:5px","float:left;margin-left:20px;widht:100%;");
+      div1.appendChild(card2);
+      var n = q.length - 1;
+      for (var i = 0; i < q.length; i++) {
+        var p6 = document.createElement("h5");
+        var p7 = document.createElement("h5");
+        p6.setAttribute("style","font-size: 25px", "margin-right:10px;");
+        p7.setAttribute("style", "font-size: 25px","float:left;margin-left:10px;margin-right:10px;");
+        if (q[i] < 20) {
+          if (i != n)
+            p6.textContent = "P" + (q[i] + 1) + "--(wants)-->";
+          else if (i == n && q[n] != q[0])
+            p6.textContent = "P" + (q[i] + 1) + "--(wants)-->";
+          else
+            p6.textContent = "P" + (q[i] + 1);
+          div1.appendChild(p6);
+        }
+        else if (q[i] >= 20) {
+          if (i != n)
+            p7.textContent = "R" + (q[i] + 1 - 20) + "--(allocated to)-->";
+          else if (i == n && q[n] != q[0])
+            p7.textContent = "R" + (q[i] + 1 - 20) + "--(allocated to)-->";
+          else
+            p7.textContent = "R" + (q[i] + 1 - 20);
+          div1.appendChild(p7);
+        }
+        console.log(q[i]);
+      }
+      var p8 = document.createElement("h5");
+      p8.setAttribute("style","font-size:30px","float:left;margin-left:20px;margin-right:20px;");
+      var l = q.length - 1;
+      if (q[l] != q[0] && q[l] < 20) {
+        console.log(q[0]);
+        p8.textContent = "R" + (q[0] + 1 - 20);
+        div1.appendChild(p8);
+      }
+      else if (q[l] != q[0] && q[l] >= 20) {
+        console.log(q[0]);
+        p8.textContent = "R" + (q[0] + 1);
+        div1.appendChild(p8);
+      }
+      console.log("Graph contains cycle");
+    }
+    else {
+      var p1 = document.createElement("h5");
+      p1.setAttribute("style","font-size:30px", "margin-left:50px;");
+      p1.textContent = " No Deadlock";
+      div.appendChild(p1);
+      console.log("Graph doesn't contain cycle");
+    }
+
+  }
+
+  function clear_data() {
+    var a = 3;
+    console.log(a);
+    alloc = [];
+    max = [];
+    need = [];
+    p = [];
+    r = [];
+    q = [];
+    visited = [];
+    recStack = [];
+    //index =0;
+    //num =0;
+    var clr1 = document.getElementById("output");
+    var clr2 = document.getElementById("output1");
+    clr1.innerHTML = "";
+    clr2.innerHTML = "";
+    var clr3 = document.getElementById("allocated");
+    var clr4 = document.getElementById("need");
+    clr3.innerHTML = "";
+    clr4.innerHTML = "";
+    var clr5 = document.getElementById("totalres");
+    var clr6 = document.getElementById("totalpros");
+    clr5.value = "";
+    clr6.value = "";
+  }
+
+  function cleardata() {
+    alloc = [];
+    max = [];
+    need = [];
+    p = [];
+    r = [];
+    q = [];
+    var clr1 = document.getElementById("output");
+    var clr2 = document.getElementById("output1");
+    clr1.innerHTML = "";
+    clr2.innerHTML = "";
+  }
+
+  function detection() {
+    cleardata();
+    for (var i = 0; i < index; i++) {
+      var temp1 = [];
+      for (var j = 0; j < num; j++) {
+        var inp1 = document.getElementById("AR" + i + "," + j).value;
+        if (isNaN(parseInt(inp1)) || inp1 < 0 || inp1 > 1) {
+          window.alert("Please enter valid inputs");
+          return;
+        }
+
+        temp1.push(parseInt(inp1));
+      }
+      alloc.push(temp1);
+    }
+    for (var i = 0; i < index; i++) {
+      var temp1 = [];
+      for (var j = 0; j < num; j++) {
+        var inp1 = document.getElementById("NR" + i + "," + j).value;
+        if (isNaN(parseInt(inp1)) || inp1 < 0 || inp1 > 1) {
+          window.alert("Please enter valid inputs");
+          return;
+        }
+        temp1.push(parseInt(inp1));
+
+      }
+      need.push(temp1);
+    }
+
+    for (var i = 0; i < num; i++) {
+      var c = 0;
+      for (var j = 0; j < index; j++) {
+        if (alloc[j][i] > 0)
+          c++;
+        if (c > 1) {
+          window.alert("Resourse " + (j + 1) + " can not be allocated to more than one process");
+          return;
+        }
+      }
+
+    }
+    for (var i = 0; i < index; i++)
+      p.push(i);
+    for (var i = 0; i < num; i++)
+      r.push(20 + i);
+
+
+    createGraph();
+  }
+</script>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="../../assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="inner-page" style="padding: 30px 150px;">
+
+
+   <div class="page-header">
+        <center>
+        <h1 style="font-size:50px"> <u>Single Instance Resource</u></h1>
+      </center>
+      </div>
+
+      <div style="width:10%;;margin-left:10px;text-align:left;">
+        <!-- <button class="btn btn-primary btn-success" style ="float:right;margin-right:20px;" onclick="clear_data()"  >Clear Data</button> -->
+        <!-- <div style="float:left; margin-right:20px;">Number of Resources:</div> -->
+        <div class="input-group input-group-lg" style="height:60px;width: 350px;padding: 30px 150px; margin-left: 200px;">
+          <div class="input-group-prepend">
+            <span style="font-size:25px" class="input-group-text" id="inputGroup-sizing-lg"><b>Number of<br> Resources</b></span>
+          </div>
+
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+            id="totalres">
+        </div>
+        <!-- <div style="float:left; margin-right:20px;">Number of Processes:</div> -->
+        <div class="input-group input-group-lg" style="height:70px;width:500px;padding: 10px 150px; margin-left:200px;">
+          <div class="input-group-prepend">
+            <span style="font-size:25px" class="input-group-text" id="inputGroup-sizing-lg"><b>Number of <br>Processes</b></span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+            id="totalpros" onkeyup="addInitials()"></input>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div id="allocated" style="font-size:25px;padding: 10px 150px "></div>
+      <br><br />
+      <br><br />
+      <div id="need" style="font-size: 25px;padding: 10px 150px"></div>
+      <br><br />
+      <br><br />
+
+
+      <div style="margin-left:900px; margin-bottom:20px">
+        <button style="font-size: 25px" class="btn btn-primary" onclick="detection()">Run</button>
+      </div>
+      <div id="output">
+
+      </div>
+      <br>
+      <br />
+      <div id="output1">
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../../assets/vendor/purecounter/purecounter.js"></script>
+  <script src="../../assets/vendor/aos/aos.js"></script>
+  <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../../assets/js/main.js"></script>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

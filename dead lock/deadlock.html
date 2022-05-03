@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+<style>
+p {
+    font-size: 20px;
+}
+a.button {
+    background-color: #272626; 
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin-right: 10px;
+  margin-left: 80%;
+}
+
+</style>
+
+<body>
+    <body style="background-color:rgba(45, 164, 173, 0.765);">
+
+    <br>
+<center>
+    <h2><u>DEADLOCK</u></h2><br>
+</center>
+<p>A process in operating system uses resources in the following way. <br>
+    1) Requests a resource <br>
+    2) Use the resource <br>
+    3) Releases the resource <br><br>
+    Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process. 
+Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other. 
+A similar situation occurs in operating systems when there are two or more processes that hold some resources 
+and wait for resources held by other(s). For example, in the below diagram, Process 1 is holding Resource 1
+ and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1. <br><br></p>
+ <center>
+    <img src="2.jpg" alt="deadlock" width="500" height="233">
+    </center><br><br>
+<p>Deadlock can arise if the following four conditions hold simultaneously (Necessary Conditions) <br>
+<b>Mutual Exclusion:</b> Two or more resources are non-shareable (Only one process can use at a time) <br>
+<b>Hold and Wait:</b> A process is holding at least one resource and waiting for resources. <br>
+<b>No Preemption:</b> A resource cannot be taken from a process unless the process releases the resource. <br>
+<b>Circular Wait:</b> A set of processes are waiting for each other in circular form. <br><br>
+There are three ways to handle deadlock :1) Deadlock prevention or avoidance2) Deadlock detection and recovery3) Ignore
+ the problem altogether<br>
+<b>Single Instance Resource</b> is used for deadlock detection and <b>BANKER'S ALGORITHM</b> is used for deadlock prevention.<br><br></p>
+<h2><u>Single-Instance Resource Deadlock Detection</u></h2>
+<p>The deadlock detection algorithm for systems with a single instance of each resource type, and tasks making
+resource requests following the single resource request model, is based on the graph theory. The idea is to find 
+cycles in the resource allocation graph, which represents the circular-wait condition, indicating the existence of
+ deadlocks.</p>
+<br><br>
+<center>
+    <img src="3.jpg" alt="deadlock" width="500" height="233">
+    </center><br><br>
+<p>Above image shows the resource allocation graph. The graph represents the following:<br>
+
+*A circle represents a resource,<br>
+
+*A square represents a task or thread of execution,<br>
+
+*An arrow going from a task to a resource indicates that the task wants the resource, and<br>
+
+*An arrow going from a resource to a task indicates that the task currently holds the resource.<br></p>
+<a href="simulator.html" class="button">SIMULATOR</a>
+</p>
+</head>
+</body>
+</html>
